@@ -1,2 +1,8 @@
 # BickerQuicker
 ** BickerBickerQuicker **
+
+APP DESCRIPTION
+
+REQUIRED USER STORIES
+
+OPTIONAL USER STOREIS
