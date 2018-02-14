@@ -1,6 +1,8 @@
 # BickerQuicker
 ** BickerBickerQuicker **
 
+Team : BlizzardLizardz
+
 Team Members : Jon Grider, Brendan Raftery, Harjas Monga, Scott E.
 
 APP DESCRIPTION
