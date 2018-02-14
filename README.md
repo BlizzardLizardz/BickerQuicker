@@ -1,5 +1,5 @@
 # BickerQuicker
-** BickerBickerQuicker **
+Project Name: **BickerBickerQuicker**
 
 Team : BlizzardLizardz
 
