@@ -1,6 +1,8 @@
 # BickerQuicker
 ** BickerBickerQuicker **
 
+Team Members : Jon Grider, Brendan Raftery, Harjas Monga, Scott 
+
 APP DESCRIPTION
 
 The following **required** functionality is completed:
