@@ -16,6 +16,7 @@ The following **required** functionality is completed:
 - [ ] User can pull to refresh the list of Bickers
 - [ ] User can tap on a Bicker to view the full discussion
 - [ ] User can vote for one side of a Bicker
+- [ ] User can choose to post anonymously
 - [ ] Auto layout support for iPhone 6 and newer
 
 The following **stretch** features are completed:
