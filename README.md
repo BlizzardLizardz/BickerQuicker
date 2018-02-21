@@ -35,4 +35,6 @@ Wireframe:
 
 <img src="wireframe.jpg" title="Prototype Wireframe" width='' alt='Prototype Wireframe'/>
 
+<img src="https://i.imgur.com/ULVWDFV.gif" title="Prototype Wireframe" width='' alt='Prototype Wireframe'/>
+
 
