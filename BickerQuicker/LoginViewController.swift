@@ -1,0 +1,55 @@
+//
+//  LoginViewController.swift
+//  BickerQuicker
+//
+//  Created by Brendan Raftery on 2/26/18.
+//  Copyright © 2018 Jonathan Grider. All rights reserved.
+//
+
+import UIKit
+
+class LoginViewController: UIViewController {
+
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var bickerLabel: UILabel!
+    @IBOutlet weak var quickerLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        signUpButton.layer.borderColor = UIColor.bickerPurple().cgColor
+        signUpButton.layer.backgroundColor = UIColor.white.cgColor
+        signUpButton.layer.borderWidth = 1.0
+        signUpButton.setTitleColor(UIColor.bickerPurple(), for: [])
+        signUpButton.layer.cornerRadius = 10.0
+        signUpButton.layer.masksToBounds = true
+        
+        logInButton.layer.cornerRadius = 10.0
+        logInButton.layer.masksToBounds = true
+        
+        bickerLabel.textColor = UIColor.girlPink()
+        quickerLabel.textColor = UIColor.boyBlue()
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
