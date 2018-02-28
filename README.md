@@ -12,9 +12,9 @@ The following **required** functionality is completed:
 - [ ] User sees app icon in home screen and styled launch screen.
 - [ ] User can sign up and sign in to the login screen
 - [ ] User can log out of his or her account
-- [ ] Use can create and post a Bicker
-- [ ] User can view a list of Bickers
-- [ ] User can pull to refresh the list of Bickers
+- [ ] Use can create and post a Bicker - Harjas
+- [ ] User can view a list of Bickers - Harjas
+- [ ] User can pull to refresh the list of Bickers - Harjas
 - [ ] User can tap on a Bicker to view the full discussion
 - [ ] User can vote for one side of a Bicker
 - [ ] User can choose to post anonymously
