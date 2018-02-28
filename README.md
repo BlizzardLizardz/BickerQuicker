@@ -9,20 +9,19 @@ APP DESCRIPTION
 
 The following **required** functionality is completed:
 
-- [ ] User sees app icon in home screen and styled launch screen.
-- [ ] User can sign up and sign in to the login screen
-- [ ] User can log out of his or her account
+- [ ] User sees app icon in home screen and styled launch screen. - Brendan
+- [ ] User can sign up and sign in to the login screen - Brendan
+- [ ] User can log out of his or her account - Brendan
 - [ ] Use can create and post a Bicker - Harjas
 - [ ] User can view a list of Bickers - Harjas
 - [ ] User can pull to refresh the list of Bickers - Harjas
-- [ ] User can tap on a Bicker to view the full discussion
+- [ ] User can tap on a Bicker to view the full statistics
 - [ ] User can vote for one side of a Bicker
-- [ ] User can choose to post anonymously
+- [ ] User can choose to post a bicker anonymously
 - [ ] Auto layout support for iPhone 6 and newer
 
 The following **stretch** features are completed:
 
-- [ ] User can post comments on a Bicker
 - [ ] User can log in with their Facebook or Google account
 - [ ] User can set a deadline on a Bicker
 
