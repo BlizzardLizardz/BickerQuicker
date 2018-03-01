@@ -9,8 +9,8 @@ APP DESCRIPTION
 
 The following **required** functionality is completed:
 
-- [ ] User sees app icon in home screen and styled launch screen. - Brendan
-- [ ] User can sign up and sign in to the login screen - Brendan
+- [x] User sees app icon in home screen and styled launch screen. - Brendan, Jonathan
+- [x] User can sign up and sign in to the login screen - Brendan
 - [ ] User can log out of his or her account - Brendan
 - [ ] Use can create and post a Bicker - Harjas
 - [ ] User can view a list of Bickers - Harjas
@@ -24,6 +24,7 @@ The following **stretch** features are completed:
 
 - [ ] User can log in with their Facebook or Google account
 - [ ] User can set a deadline on a Bicker
+- [ ] User can activate a Dark Mode in the Settings page.
 
 The following **additional** features are compelted:
 
