@@ -139,7 +139,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderedTableViewCell" rowHeight="131" id="U5A-rE-TLl" customClass="GenderedBickerCellTableViewCell" customModule="BickerQuicker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderedTableViewCell" rowHeight="131" id="U5A-rE-TLl" customClass="GenderedBickerCell" customModule="BickerQuicker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U5A-rE-TLl" id="mFL-9W-Fdc">
@@ -284,6 +284,19 @@
                                                 <constraint firstItem="sL0-VJ-CWf" firstAttribute="trailing" secondItem="i81-C4-dQj" secondAttribute="trailing" id="ygA-vl-cmD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="herSideLabel" destination="ISI-Z0-89D" id="lqx-6n-rKO"/>
+                                            <outlet property="hisSideLabel" destination="yAK-bY-R83" id="WQ1-gS-Lts"/>
+                                            <outlet property="leftBannerView" destination="xPO-tm-dxJ" id="WOY-Gi-8hy"/>
+                                            <outlet property="leftSideBackground" destination="Y5y-N6-rQn" id="tDG-bq-R8Y"/>
+                                            <outlet property="leftSideBorder" destination="arK-b5-eq0" id="gLB-Gk-Q5c"/>
+                                            <outlet property="leftSideText" destination="uxg-qO-GJ7" id="PFE-l8-sC9"/>
+                                            <outlet property="medianView" destination="aE4-Zo-xZw" id="MIW-eu-boY"/>
+                                            <outlet property="rightBannerView" destination="i81-C4-dQj" id="Tol-yo-MHk"/>
+                                            <outlet property="rightSideBackground" destination="FOt-XV-VoX" id="c2K-fe-6fM"/>
+                                            <outlet property="rightSideBorder" destination="sL0-VJ-CWf" id="sh9-gt-iff"/>
+                                            <outlet property="rightSideText" destination="X93-JD-JUc" id="F78-aj-n1g"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -318,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-39-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="882.90854572713647"/>
+            <point key="canvasLocation" x="137" y="857"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="rGF-3o-aUW">

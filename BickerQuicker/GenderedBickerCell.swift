@@ -9,7 +9,19 @@
 import UIKit
 
 class GenderedBickerCell: UITableViewCell {
-
+    
+    @IBOutlet weak var leftBannerView: UIView!
+    @IBOutlet weak var rightBannerView: UIView!
+    @IBOutlet weak var medianView: UIView!
+    @IBOutlet weak var hisSideLabel: UILabel!
+    @IBOutlet weak var herSideLabel: UILabel!
+    @IBOutlet weak var leftSideText: UILabel!
+    @IBOutlet weak var rightSideText: UILabel!
+    @IBOutlet weak var rightSideBorder: UIView!
+    @IBOutlet weak var rightSideBackground: UIView!
+    @IBOutlet weak var leftSideBackground: UIView!
+    @IBOutlet weak var leftSideBorder: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +32,4 @@ class GenderedBickerCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
