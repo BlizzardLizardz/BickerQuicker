@@ -16,6 +16,7 @@
 		F5BE196820292C7500D45E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196620292C7500D45E44 /* Main.storyboard */; };
 		F5BE196A20292C7500D45E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196920292C7500D45E44 /* Assets.xcassets */; };
 		F5BE196D20292C7500D45E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196B20292C7500D45E44 /* LaunchScreen.storyboard */; };
+		F5BF7A48204E125900823068 /* BickerList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BF7A47204E125900823068 /* BickerList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F5BE196920292C7500D45E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5BE196C20292C7500D45E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5BE196E20292C7500D45E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5BF7A47204E125900823068 /* BickerList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BickerList.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				C6F004C52044D8180053C741 /* LoginViewController.swift */,
 				C69B15E520487BC600C2164E /* SignUpViewController.swift */,
 				C69B15E72048971C00C2164E /* GenderedBickerCell.swift */,
+				F5BF7A47204E125900823068 /* BickerList.storyboard */,
 			);
 			path = BickerQuicker;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5BF7A48204E125900823068 /* BickerList.storyboard in Resources */,
 				F5BE196D20292C7500D45E44 /* LaunchScreen.storyboard in Resources */,
 				F5BE196A20292C7500D45E44 /* Assets.xcassets in Resources */,
 				F5BE196820292C7500D45E44 /* Main.storyboard in Resources */,
