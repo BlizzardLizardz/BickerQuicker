@@ -1,0 +1,6 @@
+framework module Pods_BickerQuicker {
+  umbrella header "Pods-BickerQuicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
