@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
 
@@ -36,6 +37,31 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func signupButtonPressed(_ sender: Any) {
+        let newUser = PFUser()
+        let signupErrorAlert = UIAlertController(title: "Error Signup", message: "Password Mistmatch", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        signupErrorAlert.addAction(okayAction)
+        if passwordField.text != repeatField.text {
+            self.present(signupErrorAlert, animated: true, completion: nil)
+            return
+        }
+        newUser.username = usernameField.text
+        newUser.password = passwordField.text
+        newUser["gender"] = genderSelect.titleForSegment(at: genderSelect.selectedSegmentIndex)
+        newUser.signUpInBackground { (success: Bool, error: Error?) in
+            if let error = error {
+                signupErrorAlert.message = "There was issue registering your account. Please try again."
+                self.present(signupErrorAlert, animated: true, completion: nil)
+                print(error.localizedDescription)
+            } else {
+                print("registration sucessful!")
+            }
+        }
+    }
+    @IBAction func signUpViewTapped(_ sender: Any) {
+        self.view.endEditing(true)
     }
     
 

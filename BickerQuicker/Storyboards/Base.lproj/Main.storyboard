@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5n-cv-oJc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -472,9 +472,13 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonPressed:" destination="bxd-k1-CNH" eventType="touchUpInside" id="zpp-Vr-cYN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7QP-KX-QIK" firstAttribute="centerX" secondItem="NRn-Ci-EGs" secondAttribute="centerX" id="34E-xm-umS"/>
                             <constraint firstItem="t8M-Bk-pba" firstAttribute="leading" secondItem="fNP-dy-nZ4" secondAttribute="trailing" constant="6" id="6bx-PL-jmv"/>
@@ -497,6 +501,9 @@
                             <constraint firstItem="dPC-f8-fTB" firstAttribute="top" secondItem="NcM-tV-nLZ" secondAttribute="bottom" constant="26" id="zGC-lm-pED"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lHu-rh-N2V"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Urx-ZK-Knp" appends="YES" id="0T4-uX-AgR"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="7QP-KX-QIK" id="PH1-kO-ywy"/>
@@ -508,6 +515,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-rt-M1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Urx-ZK-Knp">
+                    <connections>
+                        <action selector="signUpViewTapped:" destination="bxd-k1-CNH" id="Vre-gR-gwC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1329" y="133"/>
         </scene>
@@ -516,7 +528,4 @@
         <image name="female" width="282" height="307"/>
         <image name="male" width="285" height="308"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="9Aa-hS-K0Z"/>
-    </inferredMetricsTieBreakers>
 </document>
