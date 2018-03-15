@@ -127,6 +127,7 @@
                         <outlet property="quickerLabel" destination="JOa-jj-ezD" id="RLy-n5-7S3"/>
                         <outlet property="signUpButton" destination="LNh-WH-wWy" id="Byu-dS-UEt"/>
                         <outlet property="usernameField" destination="5gn-MF-4bE" id="ukk-VY-mr8"/>
+                        <segue destination="b5n-cv-oJc" kind="presentation" identifier="loginSegue" id="Whd-pJ-SYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,7 +137,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="14" y="84"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QDC-KT-rxw">
@@ -343,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-39-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1017"/>
+            <point key="canvasLocation" x="718" y="849"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="rGF-3o-aUW">
@@ -524,6 +525,7 @@
                         <outlet property="repeatField" destination="rT0-qe-LQh" id="9Mg-iY-xcy"/>
                         <outlet property="signupButton" destination="NRn-Ci-EGs" id="xL7-sn-e3j"/>
                         <outlet property="usernameField" destination="dPC-f8-fTB" id="8iv-mw-Cah"/>
+                        <segue destination="b5n-cv-oJc" kind="presentation" identifier="registrationSegue" id="bIV-12-NsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-rt-M1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -533,11 +535,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1329" y="133"/>
+            <point key="canvasLocation" x="1217" y="83"/>
         </scene>
     </scenes>
     <resources>
         <image name="female" width="282" height="307"/>
         <image name="male" width="285" height="308"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bIV-12-NsX"/>
+    </inferredMetricsTieBreakers>
 </document>

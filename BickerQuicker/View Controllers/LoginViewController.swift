@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
                 print("User log in failed: \(error.localizedDescription)")
             } else {
                 print("User logged in successfully")
-                //TODO: segue to correct view
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
         

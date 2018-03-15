@@ -57,7 +57,7 @@ class SignUpViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 print("registration sucessful!")
-                //TODO: segue to correct view
+                self.performSegue(withIdentifier: "registrationSegue", sender: nil)
             }
         }
     }

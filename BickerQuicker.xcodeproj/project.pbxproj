@@ -14,7 +14,6 @@
 		C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F004C52044D8180053C741 /* LoginViewController.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
 		F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE196220292C7500D45E44 /* AppDelegate.swift */; };
-		F5BE196520292C7500D45E44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE196420292C7500D45E44 /* ViewController.swift */; };
 		F5BE196820292C7500D45E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196620292C7500D45E44 /* Main.storyboard */; };
 		F5BE196A20292C7500D45E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196920292C7500D45E44 /* Assets.xcassets */; };
 		F5BE196D20292C7500D45E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196B20292C7500D45E44 /* LaunchScreen.storyboard */; };
@@ -34,7 +33,6 @@
 		E3BAB0972050AC440009A44C /* BridgingfFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BridgingfFile.c; sourceTree = "<group>"; };
 		F5BE195F20292C7500D45E44 /* BickerQuicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BickerQuicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BE196220292C7500D45E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5BE196420292C7500D45E44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5BE196720292C7500D45E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5BE196920292C7500D45E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5BE196C20292C7500D45E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				C6F004C52044D8180053C741 /* LoginViewController.swift */,
-				F5BE196420292C7500D45E44 /* ViewController.swift */,
 				C69B15E520487BC600C2164E /* SignUpViewController.swift */,
 			);
 			path = "View Controllers";
@@ -280,7 +277,6 @@
 				C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */,
 				E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */,
 				C69B15E82048971C00C2164E /* GenderedBickerCell.swift in Sources */,
-				F5BE196520292C7500D45E44 /* ViewController.swift in Sources */,
 				F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */,
 				C6F004C42044D4B40053C741 /* UIColor+FlatColors.swift in Sources */,
 				C69B15E620487BC600C2164E /* SignUpViewController.swift in Sources */,
