@@ -14,7 +14,7 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="BickerQuicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UnauthorizedView" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="BickerQuicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
                         <outlet property="quickerLabel" destination="JOa-jj-ezD" id="RLy-n5-7S3"/>
                         <outlet property="signUpButton" destination="LNh-WH-wWy" id="Byu-dS-UEt"/>
                         <outlet property="usernameField" destination="5gn-MF-4bE" id="ukk-VY-mr8"/>
-                        <segue destination="b5n-cv-oJc" kind="presentation" identifier="loginSegue" id="Whd-pJ-SYc"/>
+                        <segue destination="AMs-H8-8UV" kind="presentation" identifier="loginSegue" id="Whd-pJ-SYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,17 +139,25 @@
             </objects>
             <point key="canvasLocation" x="14" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Bicker View Controller-->
         <scene sceneID="QDC-KT-rxw">
             <objects>
-                <viewController storyboardIdentifier="AuthenticatedViewController" id="b5n-cv-oJc" sceneMemberID="viewController">
+                <viewController id="b5n-cv-oJc" customClass="BickerViewController" customModule="BickerQuicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oRh-8k-fd4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-r0-Fgk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O6E-RQ-cck">
+                                <rect key="frame" x="7" y="70" width="361" height="29"/>
+                                <segments>
+                                    <segment title="Most Recent"/>
+                                    <segment title="Most Popular"/>
+                                    <segment title="My Bickers"/>
+                                </segments>
+                                <color key="tintColor" red="0.69033698720000003" green="0.24942188579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-r0-Fgk">
+                                <rect key="frame" x="0.0" y="106" width="375" height="561"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderedTableViewCell" rowHeight="131" id="U5A-rE-TLl" customClass="GenderedBickerCell" customModule="BickerQuicker" customModuleProvider="target">
@@ -313,38 +321,35 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O6E-RQ-cck">
-                                <rect key="frame" x="8" y="28" width="361" height="29"/>
-                                <segments>
-                                    <segment title="Most Recent"/>
-                                    <segment title="Most Popular"/>
-                                    <segment title="My Bickers"/>
-                                </segments>
-                                <color key="tintColor" red="0.69033698720000003" green="0.24942188579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-EO-x8Q">
-                                <rect key="frame" x="0.0" y="61" width="375" height="2"/>
-                                <color key="backgroundColor" white="0.93386501736111116" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="cEu-dD-EGL"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Je7-EO-x8Q" firstAttribute="leading" secondItem="oRh-8k-fd4" secondAttribute="leading" id="8Eu-HG-ZeE"/>
-                            <constraint firstItem="O6E-RQ-cck" firstAttribute="top" secondItem="RCh-fv-Y5S" secondAttribute="top" constant="8" id="Lvg-uF-czV"/>
-                            <constraint firstItem="Je7-EO-x8Q" firstAttribute="top" secondItem="O6E-RQ-cck" secondAttribute="bottom" constant="5" id="S0O-7t-TzZ"/>
-                            <constraint firstItem="O6E-RQ-cck" firstAttribute="leading" secondItem="RCh-fv-Y5S" secondAttribute="leading" constant="8" id="bWn-p9-arB"/>
-                            <constraint firstAttribute="trailing" secondItem="Je7-EO-x8Q" secondAttribute="trailing" id="iJB-28-bqI"/>
-                            <constraint firstItem="RCh-fv-Y5S" firstAttribute="trailing" secondItem="O6E-RQ-cck" secondAttribute="trailing" constant="6" id="ogn-cW-x24"/>
+                            <constraint firstItem="b5b-r0-Fgk" firstAttribute="top" secondItem="O6E-RQ-cck" secondAttribute="bottom" constant="8" id="BfN-4V-NTv"/>
+                            <constraint firstItem="O6E-RQ-cck" firstAttribute="top" secondItem="RCh-fv-Y5S" secondAttribute="top" constant="6" id="ERW-dH-Nc8"/>
+                            <constraint firstItem="b5b-r0-Fgk" firstAttribute="bottom" secondItem="RCh-fv-Y5S" secondAttribute="bottom" id="Wjp-TU-leK"/>
+                            <constraint firstItem="b5b-r0-Fgk" firstAttribute="trailing" secondItem="RCh-fv-Y5S" secondAttribute="trailing" id="gC7-IY-Ccz"/>
+                            <constraint firstItem="RCh-fv-Y5S" firstAttribute="trailing" secondItem="O6E-RQ-cck" secondAttribute="trailing" constant="7" id="o5D-8v-ONH"/>
+                            <constraint firstItem="O6E-RQ-cck" firstAttribute="leading" secondItem="RCh-fv-Y5S" secondAttribute="leading" constant="7" id="oLT-Qp-7WL"/>
+                            <constraint firstItem="b5b-r0-Fgk" firstAttribute="leading" secondItem="RCh-fv-Y5S" secondAttribute="leading" id="tAQ-ZA-bc3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RCh-fv-Y5S"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gX6-mz-3uG">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="srO-2v-hSj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YWd-Dh-6fi">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="b5n-cv-oJc" eventType="touchUpInside" id="cdD-jH-B4W"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-39-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="849"/>
+            <point key="canvasLocation" x="1508" y="848"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="rGF-3o-aUW">
@@ -525,7 +530,7 @@
                         <outlet property="repeatField" destination="rT0-qe-LQh" id="9Mg-iY-xcy"/>
                         <outlet property="signupButton" destination="NRn-Ci-EGs" id="xL7-sn-e3j"/>
                         <outlet property="usernameField" destination="dPC-f8-fTB" id="8iv-mw-Cah"/>
-                        <segue destination="b5n-cv-oJc" kind="presentation" identifier="registrationSegue" id="bIV-12-NsX"/>
+                        <segue destination="AMs-H8-8UV" kind="presentation" identifier="registrationSegue" id="bIV-12-NsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-rt-M1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -537,12 +542,30 @@
             </objects>
             <point key="canvasLocation" x="1217" y="83"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fwC-Ie-Eqf">
+            <objects>
+                <navigationController storyboardIdentifier="AuthenticatedView" automaticallyAdjustsScrollViewInsets="NO" id="AMs-H8-8UV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7og-AW-ngD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b5n-cv-oJc" kind="relationship" relationship="rootViewController" id="18k-iE-NZj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYC-iI-31D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716.79999999999995" y="848.27586206896558"/>
+        </scene>
     </scenes>
     <resources>
         <image name="female" width="282" height="307"/>
         <image name="male" width="285" height="308"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bIV-12-NsX"/>
+        <segue reference="Whd-pJ-SYc"/>
     </inferredMetricsTieBreakers>
 </document>
