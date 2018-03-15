@@ -40,6 +40,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmq-5R-kBp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNh-WH-wWy">
                                 <rect key="frame" x="88" y="467" width="198" height="33"/>
@@ -99,6 +102,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Tl7-wy-swH" firstAttribute="centerX" secondItem="5gn-MF-4bE" secondAttribute="centerX" id="BA2-KH-e4a"/>
                             <constraint firstItem="5gn-MF-4bE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="J73-oB-k8Y"/>
@@ -112,6 +116,9 @@
                             <constraint firstItem="5gn-MF-4bE" firstAttribute="top" secondItem="yZI-6I-qML" secondAttribute="bottom" constant="25.5" id="z0j-Z4-cDx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hKA-oM-xSh" appends="YES" id="meK-LH-4BE"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="bickerLabel" destination="1nT-aY-TOk" id="FBc-Ck-Eeo"/>
@@ -123,6 +130,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hKA-oM-xSh">
+                    <connections>
+                        <action selector="loginViewTapped:" destination="BYZ-38-t0r" id="gtV-mN-6lW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
