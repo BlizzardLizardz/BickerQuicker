@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://bicker-quicker-backend.herokuapp.com/parse"
         })
     )
+    if PFUser.current() != nil {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+    }
     return true
   }
 
