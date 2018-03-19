@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [x] User can sign up and sign in to the login screen - Brendan
 - [x] User can log out of his or her account - Brendan
 - [x] User login persists across app restarts
-- [ ] Use can create and post a Bicker - Harjas
+- [x] Use can create and post a Bicker - Harjas
 - [ ] User can view a list of Bickers - Harjas
 - [ ] User can pull to refresh the list of Bickers - Harjas
 - [ ] User can tap on a Bicker to view statistics about that bicker
