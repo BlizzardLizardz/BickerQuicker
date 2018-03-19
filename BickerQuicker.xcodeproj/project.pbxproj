@@ -14,6 +14,7 @@
 		C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F004C52044D8180053C741 /* LoginViewController.swift */; };
 		E342C2A5205A0E19004273A2 /* BickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E342C2A4205A0E19004273A2 /* BickerViewController.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
+		F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */; };
 		F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE196220292C7500D45E44 /* AppDelegate.swift */; };
 		F5BE196820292C7500D45E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196620292C7500D45E44 /* Main.storyboard */; };
 		F5BE196A20292C7500D45E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196920292C7500D45E44 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		E3BAB0952050AC440009A44C /* BickerQuicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BickerQuicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3BAB0962050AC440009A44C /* BridgingfFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingfFile.h; sourceTree = "<group>"; };
 		E3BAB0972050AC440009A44C /* BridgingfFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BridgingfFile.c; sourceTree = "<group>"; };
+		F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5BE195F20292C7500D45E44 /* BickerQuicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BickerQuicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BE196220292C7500D45E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BE196720292C7500D45E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		E342C29F2059EBEB004273A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C69B15E72048971C00C2164E /* GenderedBickerCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,6 +87,7 @@
 				C6F004C52044D8180053C741 /* LoginViewController.swift */,
 				C69B15E520487BC600C2164E /* SignUpViewController.swift */,
 				E342C2A4205A0E19004273A2 /* BickerViewController.swift */,
+				F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -136,7 +140,6 @@
 				F5BE196920292C7500D45E44 /* Assets.xcassets */,
 				F5BE196E20292C7500D45E44 /* Info.plist */,
 				C6F004C32044D4B40053C741 /* UIColor+FlatColors.swift */,
-				C69B15E72048971C00C2164E /* GenderedBickerCell.swift */,
 				E3BAB0992050AC590009A44C /* Pod Bridge */,
 			);
 			path = BickerQuicker;
@@ -283,6 +286,7 @@
 				C69B15E82048971C00C2164E /* GenderedBickerCell.swift in Sources */,
 				F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */,
 				C6F004C42044D4B40053C741 /* UIColor+FlatColors.swift in Sources */,
+				F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */,
 				C69B15E620487BC600C2164E /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

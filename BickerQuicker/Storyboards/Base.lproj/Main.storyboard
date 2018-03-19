@@ -127,7 +127,7 @@
                         <outlet property="quickerLabel" destination="JOa-jj-ezD" id="RLy-n5-7S3"/>
                         <outlet property="signUpButton" destination="LNh-WH-wWy" id="Byu-dS-UEt"/>
                         <outlet property="usernameField" destination="5gn-MF-4bE" id="ukk-VY-mr8"/>
-                        <segue destination="AMs-H8-8UV" kind="presentation" identifier="loginSegue" id="Whd-pJ-SYc"/>
+                        <segue destination="rqo-0Q-QAK" kind="presentation" identifier="loginSegue" id="Whd-pJ-SYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,7 +157,7 @@
                                 <color key="tintColor" red="0.69033698720000003" green="0.24942188579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-r0-Fgk">
-                                <rect key="frame" x="0.0" y="106" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="106" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderedTableViewCell" rowHeight="131" id="U5A-rE-TLl" customClass="GenderedBickerCell" customModule="BickerQuicker" customModuleProvider="target">
@@ -349,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-39-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="848"/>
+            <point key="canvasLocation" x="2145" y="948"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="rGF-3o-aUW">
@@ -530,7 +530,7 @@
                         <outlet property="repeatField" destination="rT0-qe-LQh" id="9Mg-iY-xcy"/>
                         <outlet property="signupButton" destination="NRn-Ci-EGs" id="xL7-sn-e3j"/>
                         <outlet property="usernameField" destination="dPC-f8-fTB" id="8iv-mw-Cah"/>
-                        <segue destination="AMs-H8-8UV" kind="presentation" identifier="registrationSegue" id="bIV-12-NsX"/>
+                        <segue destination="rqo-0Q-QAK" kind="presentation" identifier="registrationSegue" id="bIV-12-NsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Id-rt-M1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -542,10 +542,11 @@
             </objects>
             <point key="canvasLocation" x="1217" y="83"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bickers-->
         <scene sceneID="fwC-Ie-Eqf">
             <objects>
                 <navigationController storyboardIdentifier="AuthenticatedView" automaticallyAdjustsScrollViewInsets="NO" id="AMs-H8-8UV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bickers" id="hXj-Kz-ah7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7og-AW-ngD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -558,7 +559,61 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYC-iI-31D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716.79999999999995" y="848.27586206896558"/>
+            <point key="canvasLocation" x="1199.2" y="947.67616191904051"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Xre-WH-z7Y">
+            <objects>
+                <viewController id="HYz-rZ-uCT" customClass="ProfileViewController" customModule="BickerQuicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5U-U8-Kle">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WUL-S1-zH1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VPy-dt-z1f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9M-ny-X0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2145" y="1815"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ijh-kd-vDz">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rqo-0Q-QAK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="q62-Ma-FuA"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EgX-Sf-kC7">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AMs-H8-8UV" kind="relationship" relationship="viewControllers" id="H1G-7e-rn6"/>
+                        <segue destination="V4l-We-Krc" kind="relationship" relationship="viewControllers" id="iwr-De-Cx3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmA-C4-R28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404" y="948"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="QHt-xT-N98">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V4l-We-Krc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="W6j-yl-dV1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RhL-gM-kep">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HYz-rZ-uCT" kind="relationship" relationship="rootViewController" id="GqJ-6g-UXq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sd-XS-YVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="1815"/>
         </scene>
     </scenes>
     <resources>
