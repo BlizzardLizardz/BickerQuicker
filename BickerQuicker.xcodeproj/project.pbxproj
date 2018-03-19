@@ -13,6 +13,7 @@
 		C6F004C42044D4B40053C741 /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F004C32044D4B40053C741 /* UIColor+FlatColors.swift */; };
 		C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F004C52044D8180053C741 /* LoginViewController.swift */; };
 		E342C2A5205A0E19004273A2 /* BickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E342C2A4205A0E19004273A2 /* BickerViewController.swift */; };
+		E342C2A72060724D004273A2 /* Bicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E342C2A62060724D004273A2 /* Bicker.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
 		F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */; };
 		F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE196220292C7500D45E44 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		C6F004C32044D4B40053C741 /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FlatColors.swift"; sourceTree = "<group>"; };
 		C6F004C52044D8180053C741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E342C2A4205A0E19004273A2 /* BickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BickerViewController.swift; sourceTree = "<group>"; };
+		E342C2A62060724D004273A2 /* Bicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bicker.swift; sourceTree = "<group>"; };
 		E3BAB0952050AC440009A44C /* BickerQuicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BickerQuicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3BAB0962050AC440009A44C /* BridgingfFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingfFile.h; sourceTree = "<group>"; };
 		E3BAB0972050AC440009A44C /* BridgingfFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BridgingfFile.c; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C69B15E72048971C00C2164E /* GenderedBickerCell.swift */,
+				E342C2A62060724D004273A2 /* Bicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				C6F004C42044D4B40053C741 /* UIColor+FlatColors.swift in Sources */,
 				F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */,
 				C69B15E620487BC600C2164E /* SignUpViewController.swift in Sources */,
+				E342C2A72060724D004273A2 /* Bicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

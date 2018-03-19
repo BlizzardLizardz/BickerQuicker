@@ -545,7 +545,7 @@
         <!--Bickers-->
         <scene sceneID="fwC-Ie-Eqf">
             <objects>
-                <navigationController storyboardIdentifier="AuthenticatedView" automaticallyAdjustsScrollViewInsets="NO" id="AMs-H8-8UV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AMs-H8-8UV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bickers" id="hXj-Kz-ah7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7og-AW-ngD">
@@ -580,10 +580,11 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Ijh-kd-vDz">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rqo-0Q-QAK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="AuthenticatedView" automaticallyAdjustsScrollViewInsets="NO" id="rqo-0Q-QAK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="q62-Ma-FuA"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EgX-Sf-kC7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -621,6 +622,6 @@
         <image name="male" width="285" height="308"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Whd-pJ-SYc"/>
+        <segue reference="bIV-12-NsX"/>
     </inferredMetricsTieBreakers>
 </document>
