@@ -335,15 +335,10 @@
                         <viewLayoutGuide key="safeArea" id="RCh-fv-Y5S"/>
                     </view>
                     <navigationItem key="navigationItem" id="gX6-mz-3uG">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="srO-2v-hSj">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YWd-Dh-6fi">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="b5n-cv-oJc" eventType="touchUpInside" id="cdD-jH-B4W"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="leQ-Qs-k5O">
+                            <connections>
+                                <action selector="logOutPressed:" destination="b5n-cv-oJc" id="48G-B7-Ct8"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="PL1-sh-Jn2">
                             <connections>
@@ -351,6 +346,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="b5b-r0-Fgk" id="b7x-Dm-sjU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tv-39-XhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
