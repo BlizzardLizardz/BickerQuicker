@@ -18,19 +18,35 @@ class Bicker : PFObject, PFSubclassing {
     @NSManaged var leftMaleVote: Int
     @NSManaged var rightFemVote: Int
     @NSManaged var rightMaleVote: Int
+    @NSManaged var isGendered: Bool
     
     class func parseClassName() -> String {
         return "Bicker"
     }
-    class func postBicker(leftText: String, rightText: String, withCompletion completion: PFBooleanResultBlock?) {
+    class func postBicker(leftText: String, rightText: String, isGendered: Bool, withCompletion completion: PFBooleanResultBlock?) {
         let bicker = Bicker()
         bicker.createdBy = PFUser.current()!
         bicker.leftText = leftText
         bicker.rightText = rightText
+        bicker.isGendered = isGendered
         bicker.leftFemVote = 0
         bicker.leftMaleVote = 0
         bicker.rightFemVote = 0
         bicker.rightMaleVote = 0
         bicker.saveInBackground(block: completion)
+    }
+    class func getBickers(limit: Int, completion: @escaping ([Bicker]?, Error?) -> ()) {
+        let query = Bicker.query()!
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.limit = limit
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error {
+                completion(nil, error)
+            } else if let posts = posts {
+                let bickers = posts as? [Bicker]
+                completion(bickers, nil)
+            }
+        }
     }
 }
