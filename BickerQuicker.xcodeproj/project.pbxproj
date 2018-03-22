@@ -18,6 +18,7 @@
 		F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */; };
 		F5B0398D2060769F00E46559 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0398C2060769F00E46559 /* PostViewController.swift */; };
 		F5B0398F2060779700E46559 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0398E2060779700E46559 /* SettingsViewController.swift */; };
+		F5B0399120632A0500E46559 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0399020632A0500E46559 /* PostDetailViewController.swift */; };
 		F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE196220292C7500D45E44 /* AppDelegate.swift */; };
 		F5BE196820292C7500D45E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196620292C7500D45E44 /* Main.storyboard */; };
 		F5BE196A20292C7500D45E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BE196920292C7500D45E44 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5B0398C2060769F00E46559 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		F5B0398E2060779700E46559 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F5B0399020632A0500E46559 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		F5BE195F20292C7500D45E44 /* BickerQuicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BickerQuicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BE196220292C7500D45E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BE196720292C7500D45E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */,
 				F5B0398C2060769F00E46559 /* PostViewController.swift */,
 				F5B0398E2060779700E46559 /* SettingsViewController.swift */,
+				F5B0399020632A0500E46559 /* PostDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */,
+				F5B0399120632A0500E46559 /* PostDetailViewController.swift in Sources */,
 				E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */,
 				F5B0398F2060779700E46559 /* SettingsViewController.swift in Sources */,
 				E342C2A5205A0E19004273A2 /* BickerViewController.swift in Sources */,
