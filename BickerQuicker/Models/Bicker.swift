@@ -45,7 +45,7 @@ class Bicker : PFObject, PFSubclassing {
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let error = error {
                 completion(nil)
-              print(error.localizedDescription)
+                print(error.localizedDescription)
             } else if let posts = posts {
                 let bickers = posts as? [Bicker]
                 completion(bickers)
