@@ -10,12 +10,12 @@ import UIKit
 import Parse
 
 class PostViewController: UIViewController {
-
+    
     @IBOutlet weak var leftSideTextView: UITextView!
     @IBOutlet weak var rightSideTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     @IBAction func postButtonPressed(_ sender: Any) {
         Bicker.postBicker(leftText: leftSideTextView.text, rightText: rightSideTextView.text, isGendered: false) { (success: Bool, error: Error?) in
