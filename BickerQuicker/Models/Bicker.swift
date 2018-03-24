@@ -52,4 +52,42 @@ class Bicker : PFObject, PFSubclassing {
             }
         }
     }
+    func voteLeft(completion: PFBooleanResultBlock?) {
+        guard let user = PFUser.current() else {
+            print("Error! Coudn't get current user!")
+            return;
+        }
+        guard let gender = user["gender"] as? String else {
+            print("Error! Coudn't get users's gender")
+            return;
+        }
+        switch gender {
+            case "Guy":
+                incrementKey("leftMaleVote")
+            case "Girl":
+                incrementKey("leftFemalVote")
+            default:
+                print("Other gender. don't know how to handle yet")
+        }
+        saveInBackground(block: completion)
+    }
+    func voteRight(completion: PFBooleanResultBlock?) {
+        guard let user = PFUser.current() else {
+            print("Error! Coudn't get current user!")
+            return;
+        }
+        guard let gender = user["gender"] as? String else {
+            print("Error! Coudn't get users's gender")
+            return;
+        }
+        switch gender {
+            case "Guy":
+                incrementKey("rightMaleVote")
+            case "Girl":
+                incrementKey("rightFemaleVote")
+            default:
+                print("Other gender. don't know how to handle yet")
+        }
+        saveInBackground(block: completion)
+    }
 }

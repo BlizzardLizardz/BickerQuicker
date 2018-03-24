@@ -97,17 +97,15 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "detailViewSegue" {
+                let detailView = segue.destination as! PostDetailViewController
+                let cell = sender as! UITableViewCell
+                if let indexPath = tableView.indexPath(for: cell) {
+                    detailView.bicker = bickers[indexPath.row]
+                }
+            }
+        }
+    }
 }

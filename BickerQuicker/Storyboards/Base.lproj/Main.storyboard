@@ -317,7 +317,7 @@
                                             <outlet property="rightSideBackground" destination="FOt-XV-VoX" id="c2K-fe-6fM"/>
                                             <outlet property="rightSideBorder" destination="sL0-VJ-CWf" id="sh9-gt-iff"/>
                                             <outlet property="rightSideText" destination="X93-JD-JUc" id="F78-aj-n1g"/>
-                                            <segue destination="q0M-1T-cHM" kind="show" id="6xo-fh-dAG"/>
+                                            <segue destination="q0M-1T-cHM" kind="show" identifier="detailViewSegue" id="6xo-fh-dAG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -355,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="2089" y="948"/>
         </scene>
-        <!--View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="ueU-gK-Chz">
             <objects>
-                <viewController id="q0M-1T-cHM" sceneMemberID="viewController">
+                <viewController id="q0M-1T-cHM" customClass="PostDetailViewController" customModule="BickerQuicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1cY-jy-qHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
