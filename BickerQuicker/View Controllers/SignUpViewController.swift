@@ -49,7 +49,14 @@ class SignUpViewController: UIViewController {
         }
         newUser.username = usernameField.text
         newUser.password = passwordField.text
-        newUser["gender"] = genderSelect.titleForSegment(at: genderSelect.selectedSegmentIndex)
+        switch genderSelect.selectedSegmentIndex {
+            case 0:
+                newUser["gender"] = Gender.Guy
+            case 1:
+                newUser["gender"] = Gender.Girl
+            default:
+                print("Unknow gender selected")
+        }
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 signupErrorAlert.message = "There was issue registering your account. Please try again."

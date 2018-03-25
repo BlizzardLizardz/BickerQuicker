@@ -14,16 +14,6 @@ class PostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bicker.voteLeft { (success, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            if success {
-                print("success")
-            } else {
-                print("faliure")
-            }
-        }
         // Do any additional setup after loading the view.
     }
     

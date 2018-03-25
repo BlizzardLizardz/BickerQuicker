@@ -527,8 +527,7 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Guy"/>
-                                    <segment title="Other"/>
-                                    <segment title="Girl"/>
+                                    <segment title="Female"/>
                                 </segments>
                                 <color key="tintColor" red="0.69033698720000003" green="0.24942188579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
