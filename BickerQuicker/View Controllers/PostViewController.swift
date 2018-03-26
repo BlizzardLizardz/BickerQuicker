@@ -17,7 +17,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func postButtonPressed(_ sender: Any) {
-        Bicker.postBicker(leftText: leftSideTextView.text, rightText: rightSideTextView.text, isGendered: false) { (success: Bool, error: Error?) in
+        Bicker.postBicker(leftText: leftSideTextView.text, rightText: rightSideTextView.text, isGendered: false,       isAnonymous: false) { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
             } else if success {

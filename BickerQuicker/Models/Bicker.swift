@@ -21,11 +21,12 @@ class Bicker : PFObject, PFSubclassing {
     @NSManaged var isGendered: Bool
     @NSManaged var leftVoteUsers: [PFUser]
     @NSManaged var rightVoteUsers: [PFUser]
+    @NSManaged var isAnonymous: Bool
     
     class func parseClassName() -> String {
         return "Bicker"
     }
-    class func postBicker(leftText: String, rightText: String, isGendered: Bool, withCompletion completion: PFBooleanResultBlock?) {
+    class func postBicker(leftText: String, rightText: String, isGendered: Bool, isAnonymous: Bool, withCompletion completion: PFBooleanResultBlock?) {
         let bicker = Bicker()
         bicker.createdBy = PFUser.current()!
         bicker.leftText = leftText
@@ -37,6 +38,7 @@ class Bicker : PFObject, PFSubclassing {
         bicker.rightMaleVote = 0
         bicker.leftVoteUsers = []
         bicker.rightVoteUsers = []
+        bicker.isAnonymous = isAnonymous
         bicker.saveInBackground(block: completion)
     }
     class func getBickers(skip: Int, limit: Int, completion: @escaping ([Bicker]?) -> ()) {
