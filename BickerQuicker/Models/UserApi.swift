@@ -10,9 +10,10 @@ import Foundation
 import Parse
 
 class UserApi {
+    
     static var sharedInstance = UserApi()
     
-    func getUserBickers(completion: @escaping ( [Bicker]?) -> ()) {
+    func getUserBickers(completion: @escaping ([Bicker]?) -> ()) {
         guard let currentUser = PFUser.current() else {
             completion(nil)
             print("Error! Coudn't get current user!")
