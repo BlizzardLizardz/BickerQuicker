@@ -12,7 +12,13 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UserApi.sharedInstance.getUserBickers { (bickers) in
+            if let bickers = bickers {
+                print(bickers)
+            } else {
+                print("coudn't get bickers")
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
