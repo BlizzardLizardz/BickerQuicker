@@ -39,11 +39,12 @@ class Bicker : PFObject, PFSubclassing {
         bicker.rightVoteUsers = []
         bicker.saveInBackground(block: completion)
     }
-    class func getBickers(limit: Int, completion: @escaping ([Bicker]?) -> ()) {
+    class func getBickers(skip: Int, limit: Int, completion: @escaping ([Bicker]?) -> ()) {
         let query = Bicker.query()!
         query.order(byDescending: "createdAt")
         query.includeKey("author")
         query.limit = limit
+        query.skip = skip
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let error = error {
                 completion(nil)

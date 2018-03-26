@@ -12,10 +12,13 @@ import Parse
 class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var skip: Int = 0
     
-    var bickers: [Bicker]! {
+    var bickers: [Bicker] = [] {
         didSet {
-            tableView.reloadData()
+            if oldValue != bickers {
+                tableView.reloadData()
+            }
         }
     }
     var refreshControl: UIRefreshControl!
@@ -33,12 +36,12 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.refreshControl?.addTarget(self, action: #selector(refreshBickers), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
         
-        getBickers()
+        getBickers(startFromBegining: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // TODO: Later update to add cell to table via delegate
-        getBickers()
+     //   getBickers(startFromBegining: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,33 +71,41 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if bickers == nil {
-            return 0
-        }
-        
         return bickers.count
     }
     
     @objc func refreshBickers() {
         
-        
+        skip = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             // Stop the refresh controller
             self.refreshControl.endRefreshing()
         }
         
-        getBickers()
+        getBickers(startFromBegining: true)
         
     }
     
-    func getBickers() {
-        Bicker.getBickers(limit: 20) { (bickers) in
-            if let bickers = bickers {
-                self.bickers = bickers
+    func getBickers(startFromBegining: Bool) {
+        Bicker.getBickers(skip: skip, limit: 20) { (bickers) in
+            if let newBickers = bickers {
+                self.skip += newBickers.count
+                if startFromBegining {
+                    self.bickers = newBickers
+                    print("setting bickers")
+                } else {
+                    self.bickers.append(contentsOf: newBickers)
+                    print("appending bickers")
+                }
             } else {
                 print("WE DIDNT GET BICKERS🤬")
                 // todo: Warning message or something
             }
+        }
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == bickers.count - 1 {
+            getBickers(startFromBegining: false)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
