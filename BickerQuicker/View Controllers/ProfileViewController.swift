@@ -14,9 +14,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var screenNameLabel: UILabel!
     
-    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
     
-    @IBOutlet weak var relationshipStatusLabel: UILabel!
     
     @IBOutlet weak var numArgsLost: UILabel!
     
