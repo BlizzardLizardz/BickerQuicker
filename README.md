@@ -24,9 +24,10 @@ The following **required** functionality is completed:
 The following **stretch** features are completed:
 
 - [ ] User can log in with their Facebook or Google account
-- [ ] User can set a deadline on a Bicker
+- [ ] User can set a voting deadline on a Bicker
 - [ ] User can activate a Dark Mode in the Settings page.
 - [ ] User can view his or her own profile
+- [x] List of bickers has infinite scrolling
 
 The following **additional** features are compelted:
 
