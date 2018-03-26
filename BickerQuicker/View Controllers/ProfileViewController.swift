@@ -9,7 +9,21 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var screenNameLabel: UILabel!
+    
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    @IBOutlet weak var relationshipStatusLabel: UILabel!
+    
+    @IBOutlet weak var numArgsLost: UILabel!
+    
+    @IBOutlet weak var numArgsWon: UILabel!
+    
+    @IBOutlet weak var profileBickerTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UserApi.sharedInstance.getUserBickers { (bickers) in
