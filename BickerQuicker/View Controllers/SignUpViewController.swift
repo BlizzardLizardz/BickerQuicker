@@ -51,9 +51,9 @@ class SignUpViewController: UIViewController {
         newUser.password = passwordField.text
         switch genderSelect.selectedSegmentIndex {
             case 0:
-                newUser["gender"] = Gender.Guy
+                newUser["gender"] = Gender.Guy.rawValue
             case 1:
-                newUser["gender"] = Gender.Girl
+                newUser["gender"] = Gender.Girl.rawValue
             default:
                 print("Unknow gender selected")
         }
