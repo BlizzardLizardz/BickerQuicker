@@ -152,9 +152,11 @@
                                 <segments>
                                     <segment title="Most Recent"/>
                                     <segment title="Most Popular"/>
-                                    <segment title="My Bickers"/>
                                 </segments>
                                 <color key="tintColor" red="0.69033698720000003" green="0.24942188579999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentationValueChanged:" destination="b5n-cv-oJc" eventType="valueChanged" id="yjT-ly-CXg"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b5b-r0-Fgk">
                                 <rect key="frame" x="0.0" y="106" width="375" height="512"/>
@@ -350,6 +352,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentationController" destination="O6E-RQ-cck" id="Qkv-dL-g1x"/>
                         <outlet property="tableView" destination="b5b-r0-Fgk" id="b7x-Dm-sjU"/>
                     </connections>
                 </viewController>

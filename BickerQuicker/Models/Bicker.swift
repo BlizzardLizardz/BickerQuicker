@@ -10,7 +10,7 @@ import Foundation
 import Parse
 
 class Bicker : PFObject, PFSubclassing {
-   
+    
     @NSManaged var createdBy: PFUser
     @NSManaged var leftText: String
     @NSManaged var rightText: String
@@ -22,6 +22,7 @@ class Bicker : PFObject, PFSubclassing {
     @NSManaged var leftVoteUsers: [PFUser]
     @NSManaged var rightVoteUsers: [PFUser]
     @NSManaged var isAnonymous: Bool
+    @NSManaged var totalVotes: Int
     
     class func parseClassName() -> String {
         return "Bicker"
@@ -36,14 +37,15 @@ class Bicker : PFObject, PFSubclassing {
         bicker.leftMaleVote = 0
         bicker.rightFemVote = 0
         bicker.rightMaleVote = 0
+        bicker.totalVotes = 0
         bicker.leftVoteUsers = []
         bicker.rightVoteUsers = []
         bicker.isAnonymous = isAnonymous
         bicker.saveInBackground(block: completion)
     }
-    class func getBickers(skip: Int, limit: Int, completion: @escaping ([Bicker]?) -> ()) {
+    class func getBickers(skip: Int, limit: Int, order: Order, completion: @escaping ([Bicker]?) -> ()) {
         let query = Bicker.query()!
-        query.order(byDescending: "createdAt")
+        query.order(byDescending: order.rawValue)
         query.includeKey("author")
         query.limit = limit
         query.skip = skip
@@ -77,29 +79,34 @@ class Bicker : PFObject, PFSubclassing {
             completion(false, nil)
             return
         }
+        var newVote = true
         if let currentSide = getVote() {
+            newVote = false
             switch currentSide {
-                case .right:
-                    remove(user, forKey: "rightVoteUsers")
-                    if gender == .Girl {
-                        incrementKey("rightFemVote", byAmount: -1)
-                    } else {
-                        incrementKey("rightMaleVote", byAmount: -1)
-                    }
-                case .left:
-                    remove(user, forKey: "leftVoteUsers")
-                    if gender == .Girl {
-                        incrementKey("leftFemVote", byAmount: -1)
-                    } else {
-                        incrementKey("leftMaleVote", byAmount: -1)
-                    }
+            case .right:
+                remove(user, forKey: "rightVoteUsers")
+                if gender == .Girl {
+                    incrementKey("rightFemVote", byAmount: -1)
+                } else {
+                    incrementKey("rightMaleVote", byAmount: -1)
+                }
+            case .left:
+                remove(user, forKey: "leftVoteUsers")
+                if gender == .Girl {
+                    incrementKey("leftFemVote", byAmount: -1)
+                } else {
+                    incrementKey("leftMaleVote", byAmount: -1)
+                }
             }
         }
         switch gender {
-            case .Girl:
-                incrementKey("\(side.rawValue)FemVote")
-            case .Guy:
-                incrementKey("\(side.rawValue)MaleVote")
+        case .Girl:
+            incrementKey("\(side.rawValue)FemVote")
+        case .Guy:
+            incrementKey("\(side.rawValue)MaleVote")
+        }
+        if newVote {
+            incrementKey("totalVotes")
         }
         add(user, forKey: "\(side.rawValue)VoteUsers")
         saveInBackground { (success, error) in
@@ -134,3 +141,4 @@ class Bicker : PFObject, PFSubclassing {
         return sideVotedFor != side
     }
 }
+

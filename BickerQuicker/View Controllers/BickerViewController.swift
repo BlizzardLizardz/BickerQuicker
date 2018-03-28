@@ -11,6 +11,7 @@ import Parse
 
 class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var segmentationController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var skip: Int = 0
     
@@ -87,7 +88,11 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func getBickers(startFromBegining: Bool) {
-        Bicker.getBickers(skip: skip, limit: 20) { (bickers) in
+        var order = Order.createdAt
+        if segmentationController.selectedSegmentIndex == 1 {
+            order = Order.totalVotes
+        }
+        Bicker.getBickers(skip: skip, limit: 20, order: order) { (bickers) in
             if let newBickers = bickers {
                 self.skip += newBickers.count
                 if startFromBegining {
@@ -102,6 +107,10 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // todo: Warning message or something
             }
         }
+    }
+    @IBAction func segmentationValueChanged(_ sender: Any) {
+        skip = 0
+        getBickers(startFromBegining: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == bickers.count - 1 {

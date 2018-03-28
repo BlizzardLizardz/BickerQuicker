@@ -18,6 +18,7 @@
 		E34A7C392067703C00546271 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A7C382067703C00546271 /* Gender.swift */; };
 		E373BDFC2069974A00AE4AB1 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373BDFB2069974A00AE4AB1 /* UserApi.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
+		E3F226C3206C5FB5008ED18C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F226C2206C5FB5008ED18C /* Order.swift */; };
 		F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */; };
 		F5B0398D2060769F00E46559 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0398C2060769F00E46559 /* PostViewController.swift */; };
 		F5B0398F2060779700E46559 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0398E2060779700E46559 /* SettingsViewController.swift */; };
@@ -45,6 +46,7 @@
 		E3BAB0952050AC440009A44C /* BickerQuicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BickerQuicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3BAB0962050AC440009A44C /* BridgingfFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingfFile.h; sourceTree = "<group>"; };
 		E3BAB0972050AC440009A44C /* BridgingfFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BridgingfFile.c; sourceTree = "<group>"; };
+		E3F226C2206C5FB5008ED18C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5B0398C2060769F00E46559 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		F5B0398E2060779700E46559 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				E34A7C362067702000546271 /* Side.swift */,
 				E34A7C382067703C00546271 /* Gender.swift */,
 				E373BDFB2069974A00AE4AB1 /* UserApi.swift */,
+				E3F226C2206C5FB5008ED18C /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */,
 				F5B0399120632A0500E46559 /* PostDetailViewController.swift in Sources */,
+				E3F226C3206C5FB5008ED18C /* Order.swift in Sources */,
 				E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */,
 				F5B0398F2060779700E46559 /* SettingsViewController.swift in Sources */,
 				E342C2A5205A0E19004273A2 /* BickerViewController.swift in Sources */,
