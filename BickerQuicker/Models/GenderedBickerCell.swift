@@ -28,6 +28,29 @@ class GenderedBickerCell: UITableViewCell {
       rightSideText.text = bicker.rightText
       
       // TODO: Update later with more stuffs
+        leftBannerView.clipsToBounds = true;
+        leftBannerView.layer.cornerRadius = 7
+        leftBannerView.layer.maskedCorners = [.layerMinXMinYCorner]
+        
+        rightBannerView.clipsToBounds = true;
+        rightBannerView.layer.cornerRadius = 7
+        rightBannerView.layer.maskedCorners = [.layerMaxXMinYCorner]
+        
+        leftSideBorder.clipsToBounds = true;
+        leftSideBorder.layer.cornerRadius = 7
+        leftSideBorder.layer.maskedCorners = [.layerMinXMaxYCorner]
+        
+        rightSideBorder.clipsToBounds = true;
+        rightSideBorder.layer.cornerRadius = 7
+        rightSideBorder.layer.maskedCorners = [.layerMaxXMaxYCorner]
+        
+        leftSideBackground.clipsToBounds = true;
+        leftSideBackground.layer.cornerRadius = 6
+        leftSideBackground.layer.maskedCorners = [.layerMinXMaxYCorner]
+        
+        rightSideBackground.clipsToBounds = true;
+        rightSideBackground.layer.cornerRadius = 6
+        rightSideBackground.layer.maskedCorners = [.layerMaxXMaxYCorner]
     }
   }
   
