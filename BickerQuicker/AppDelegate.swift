@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://bicker-quicker-backend.herokuapp.com/parse"
         })
     )
+    UITabBar.appearance().tintColor = UIColor.bickerPurple()
     if PFUser.current() != nil {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedView")
