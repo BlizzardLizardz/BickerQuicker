@@ -11,27 +11,34 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var screenNameLabel: UILabel!
-    
     @IBOutlet weak var genderLabel: UILabel!
-    
-    
     @IBOutlet weak var numArgsLost: UILabel!
-    
     @IBOutlet weak var numArgsWon: UILabel!
-    
     @IBOutlet weak var profileBickerTableView: UITableView!
+    
+    var bickers: [Bicker] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UserApi.sharedInstance.getUserBickers { (bickers) in
             if let bickers = bickers {
-                print(bickers)
+                self.bickers = bickers
             } else {
                 print("coudn't get bickers")
             }
         }
+        var gender: String?
+        UserApi.sharedInstance.getUserGender { (gen, error) in
+            if let gen = gen {
+                gender = gen
+                self.genderLabel.text = gender
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        let username = UserApi.sharedInstance.getUserName()
+        nameLabel.text = username
         // Do any additional setup after loading the view.
     }
 
