@@ -46,7 +46,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         // TODO: Later update to add cell to table via delegate
-     //   getBickers(startFromBegining: false)
+        skip = 0
+        getBickers(startFromBegining: true)
     }
     
     override func didReceiveMemoryWarning() {
