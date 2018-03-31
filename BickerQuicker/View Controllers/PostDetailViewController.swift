@@ -82,6 +82,7 @@ class PostDetailViewController: UIViewController {
             } else {
                 print("Voting for LEFT side successful!")
                 self.updateButtons(side: .left)
+                self.setVotes(bicker: self.bicker)
             }
         }
         
@@ -97,6 +98,7 @@ class PostDetailViewController: UIViewController {
             } else {
                 print("Voting for RIGHT side successful!")
                 self.updateButtons(side: .right)
+                self.setVotes(bicker: self.bicker)
             }
         }
     }
@@ -141,17 +143,7 @@ class PostDetailViewController: UIViewController {
             leftTextLabel.text = bicker.leftText
             rightTextLabel.text = bicker.rightText
             
-            // Left side votes
-            leftMaleVotes.text = String(bicker.leftMaleVote)
-            leftFemaleVotes.text = String(bicker.leftFemVote)
-            
-            // Right side votes
-            rightMaleVotes.text = String(bicker.rightMaleVote)
-            rightFemaleVotes.text = String(bicker.rightFemVote)
-            
-            // Total votes
-            leftTotalVotes.text = String(bicker.leftMaleVote + bicker.leftFemVote)
-            rightTotalVotes.text = String(bicker.rightMaleVote + bicker.rightFemVote)
+            setVotes(bicker: bicker)
             
             if let side = bicker.getVote() {
                 updateButtons(side: side)
@@ -159,6 +151,20 @@ class PostDetailViewController: UIViewController {
             }
             
         }
+    }
+    
+    func setVotes(bicker: Bicker) {
+        // Left side votes
+        leftMaleVotes.text = String(bicker.leftMaleVote)
+        leftFemaleVotes.text = String(bicker.leftFemVote)
+        
+        // Right side votes
+        rightMaleVotes.text = String(bicker.rightMaleVote)
+        rightFemaleVotes.text = String(bicker.rightFemVote)
+        
+        // Total votes
+        leftTotalVotes.text = String(bicker.leftMaleVote + bicker.leftFemVote)
+        rightTotalVotes.text = String(bicker.rightMaleVote + bicker.rightFemVote)
     }
     
     
