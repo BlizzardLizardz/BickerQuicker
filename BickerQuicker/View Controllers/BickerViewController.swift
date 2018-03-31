@@ -40,8 +40,6 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.addSubview(refreshControl)
         
         setupAlerts()
-        
-        getBickers(startFromBegining: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
