@@ -13,8 +13,11 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var segmentationController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    var skip: Int = 0
     
+    let logoutAlert = UIAlertController(title: "Confirm", message: "Are you sure you want to log out?", preferredStyle: .alert)
+    var skip: Int = 0
+    var hapticFeedback = UIImpactFeedbackGenerator()
+    var refreshControl: UIRefreshControl!
     var bickers: [Bicker] = [] {
         didSet {
             if oldValue != bickers {
@@ -22,7 +25,6 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshBickers), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
+        
+        setupAlerts()
         
         getBickers(startFromBegining: true)
     }
@@ -52,13 +56,32 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func logOutPressed(_ sender: Any) {
-        logOut()
+        present(logoutAlert, animated: true) {
+            // If they tap Logout, let the API handler log them out.
+        }
+    }
+    
+    func setupAlerts() {
+        
+        // Set up logout alert controller
+        let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+            self.logOut()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            // Do nothing; dismisses the view
+        }
+        
+        // Add actions
+        logoutAlert.addAction(logoutAction)
+        logoutAlert.addAction(cancelAction)
     }
     
     func logOut() {
+        
         print("logout function called")
         PFUser.logOutInBackground { (error: Error? ) in
         }
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         appDelegate.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "UnauthorizedView")
@@ -66,8 +89,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GenderedTableViewCell", for: indexPath) as! GenderedBickerCell
-        
         cell.bicker = bickers[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -76,8 +99,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func refreshBickers() {
-        
         skip = 0
+        hapticFeedback.impactOccurred()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             // Stop the refresh controller
             self.refreshControl.endRefreshing()
@@ -92,6 +115,7 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segmentationController.selectedSegmentIndex == 1 {
             order = Order.totalVotes
         }
+        
         Bicker.getBickers(skip: skip, limit: 20, order: order) { (bickers) in
             if let newBickers = bickers {
                 self.skip += newBickers.count
@@ -104,26 +128,32 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             } else {
                 print("WE DIDNT GET BICKERS🤬")
-                // todo: Warning message or something
             }
         }
     }
+    
     @IBAction func segmentationValueChanged(_ sender: Any) {
         skip = 0
         getBickers(startFromBegining: true)
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == bickers.count - 1 {
             getBickers(startFromBegining: false)
         }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "detailViewSegue" {
+                print("We're heading to the detail view!")
                 let detailView = segue.destination as! PostDetailViewController
                 let cell = sender as! UITableViewCell
                 if let indexPath = tableView.indexPath(for: cell) {
                     detailView.bicker = bickers[indexPath.row]
+                    print("Left Text: " + bickers[indexPath.row].leftText)
+                } else {
+                    print("NO BICKERS HERE! HUE HUE HUE")
                 }
             }
         }

@@ -16,8 +16,8 @@ The following **required** functionality is completed:
 - [x] Use can create and post a Bicker - Harjas
 - [x] User can view a list of Bickers - Harjas
 - [x] User can pull to refresh the list of Bickers - Harjas
-- [ ] User can tap on a Bicker to view statistics about that bicker
-- [ ] User can vote for one side of a Bicker
+- [x] User can tap on a Bicker to view statistics about that bicker
+- [x] User can vote for one side of a Bicker
 - [ ] User can choose to post a bicker anonymously
 - [ ] Auto layout support for iPhone 6 and newer
 

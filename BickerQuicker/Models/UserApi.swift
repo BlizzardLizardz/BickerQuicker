@@ -19,6 +19,7 @@ class UserApi {
             print("Error! Coudn't get current user!")
             return;
         }
+        
         let query = Bicker.query()!
         query.whereKey("createdBy", equalTo: currentUser)
         query.findObjectsInBackground { (bickers, error) in
@@ -30,17 +31,21 @@ class UserApi {
             }
         }
     }
+    
     func getUserName() -> String? {
         guard let user = PFUser.current() else {
             return nil
         }
+        
         return user.username
     }
+    
     func getUserGender(completion: @escaping (String?, Error?) -> ()) {
         guard let user = PFUser.current() else {
             completion(nil, nil)
             return
         }
+        
         user.fetchIfNeededInBackground { (userObject, error) in
             if let error = error {
                 completion(nil, error)
@@ -50,6 +55,7 @@ class UserApi {
                 return
             }
         }
+        
         completion(nil, nil)
     }
 }

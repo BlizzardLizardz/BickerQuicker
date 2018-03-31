@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class PostDetailViewController: UIViewController {
     
     var bicker: Bicker!
+    var voted = false
+    let hapticFeedback = UIImpactFeedbackGenerator()
     
     @IBOutlet weak var leftVoteButton: UIButton!
     @IBOutlet weak var rightVoteButton: UIButton!
@@ -22,20 +25,21 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var leftTitleBackground: UIView!
     @IBOutlet weak var rightTotalVotes: UILabel!
     @IBOutlet weak var leftTotalVotes: UILabel!
-    @IBOutlet weak var rightFemaleVotes: UIImageView!
-    @IBOutlet weak var rightMaleVotes: UIImageView!
     @IBOutlet weak var leftFemaleVotes: UILabel!
     @IBOutlet weak var leftMaleVotes: UILabel!
+    @IBOutlet weak var rightMaleVotes: UILabel!
+    @IBOutlet weak var rightFemaleVotes: UILabel!
     @IBOutlet weak var bottomSideLabel: UILabel!
     @IBOutlet weak var rightTextLabel: UILabel!
     @IBOutlet weak var leftTextLabel: UILabel!
     @IBOutlet weak var topSideLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         leftTitleBackground.clipsToBounds = true;
         leftTitleBackground.layer.cornerRadius = 7
-
+        
         rightTitleBackground.clipsToBounds = true;
         rightTitleBackground.layer.cornerRadius = 7
         
@@ -58,12 +62,105 @@ class PostDetailViewController: UIViewController {
         
         rightVoteButton.clipsToBounds = true
         rightVoteButton.layer.cornerRadius = 7
+        
+        setFields()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func didVoteLeft(_ sender: UIButton) {
+        hapticFeedback.impactOccurred()
+        
+        bicker.vote(side: .left) { (success, error) in
+            if let error = error {
+                print("Something went wrong while voting: ")
+                print(error.localizedDescription)
+            } else {
+                print("Voting for LEFT side successful!")
+                self.updateButtons(side: .left)
+            }
+        }
+        
+    }
+    
+    @IBAction func didVoteRight(_ sender: UIButton) {
+        hapticFeedback.impactOccurred()
+        
+        bicker.vote(side: .right) { (success, error) in
+            if let error = error {
+                print("Something went wrong while voting: ")
+                print(error.localizedDescription)
+            } else {
+                print("Voting for RIGHT side successful!")
+                self.updateButtons(side: .right)
+            }
+        }
+    }
+    
+    func updateButtons(side: Side) {
+        // See if the user has voted for this bicker
+        if side == .left {
+            // Update buttons
+            leftVoteButton.isUserInteractionEnabled = false
+            rightVoteButton.isUserInteractionEnabled = true
+            
+            print("LEFT SIDE")
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.leftVoteButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#colorLiteral(red: 0.9639316307, green: 0.9639316307, blue: 0.9639316307, alpha: 1)
+                self.leftVoteButton.titleLabel?.textColor = .boyBlue()
+                self.rightVoteButton.backgroundColor = .girlPink()
+                self.rightVoteButton.titleLabel?.textColor = .white
+            })
+            
+        } else {
+            // Update buttons
+            leftVoteButton.isUserInteractionEnabled = true
+            rightVoteButton.isUserInteractionEnabled = false
+            
+            print("RIGHT SIDE")
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.rightVoteButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#colorLiteral(red: 0.9639316307, green: 0.9639316307, blue: 0.9639316307, alpha: 1)
+                self.rightVoteButton.titleLabel?.textColor = .girlPink()
+                self.leftVoteButton.backgroundColor = .boyBlue()
+                self.leftVoteButton.titleLabel?.textColor = .white
+            })
+            
+        }
+        
+    }
+    
+    func setFields() {
+        if let bicker = bicker {
+            // Box text
+            leftTextLabel.text = bicker.leftText
+            rightTextLabel.text = bicker.rightText
+            
+            // Left side votes
+            leftMaleVotes.text = String(bicker.leftMaleVote)
+            leftFemaleVotes.text = String(bicker.leftFemVote)
+            
+            // Right side votes
+            rightMaleVotes.text = String(bicker.rightMaleVote)
+            rightFemaleVotes.text = String(bicker.rightFemVote)
+            
+            // Total votes
+            leftTotalVotes.text = String(bicker.leftMaleVote + bicker.leftFemVote)
+            rightTotalVotes.text = String(bicker.rightMaleVote + bicker.rightFemVote)
+            
+            if let side = bicker.getVote() {
+                updateButtons(side: side)
+                voted = true
+            }
+            
+        }
+    }
+    
     
     
     /*

@@ -27,6 +27,7 @@ class Bicker : PFObject, PFSubclassing {
     class func parseClassName() -> String {
         return "Bicker"
     }
+    
     class func postBicker(leftText: String, rightText: String, isGendered: Bool, isAnonymous: Bool, withCompletion completion: PFBooleanResultBlock?) {
         let bicker = Bicker()
         bicker.createdBy = PFUser.current()!
@@ -43,6 +44,7 @@ class Bicker : PFObject, PFSubclassing {
         bicker.isAnonymous = isAnonymous
         bicker.saveInBackground(block: completion)
     }
+    
     class func getBickers(skip: Int, limit: Int, order: Order, completion: @escaping ([Bicker]?) -> ()) {
         let query = Bicker.query()!
         query.order(byDescending: order.rawValue)
@@ -59,26 +61,31 @@ class Bicker : PFObject, PFSubclassing {
             }
         }
     }
+    
     func vote(side: Side, completion: @escaping (Bool, Error?) -> ()) {
         guard let user = PFUser.current() else {
             print("Error! Coudn't get current user!")
             completion(false, nil)
             return
         }
+        
         if !canVote(side: side) {
             completion(false, nil)
             return
         }
+        
         guard let genderString = user["gender"] as? String else {
             print("Error! Coudn't get users's gender")
             completion(false, nil)
             return
         }
+        
         guard let gender = Gender(rawValue: genderString) else {
             print("user has a nonvalid gender")
             completion(false, nil)
             return
         }
+        
         var newVote = true
         if let currentSide = getVote() {
             newVote = false
@@ -99,45 +106,55 @@ class Bicker : PFObject, PFSubclassing {
                 }
             }
         }
+        
         switch gender {
         case .Girl:
             incrementKey("\(side.rawValue)FemVote")
         case .Guy:
             incrementKey("\(side.rawValue)MaleVote")
         }
+        
         if newVote {
             incrementKey("totalVotes")
         }
+        
         add(user, forKey: "\(side.rawValue)VoteUsers")
         saveInBackground { (success, error) in
             if let error = error {
                 completion(false, error)
             } else {
-                completion(success, nil)
+                print("My left side: " + self.leftText)
+                completion(true, nil)
             }
         }
     }
+    
     func getVote() -> Side? {
         guard let currentUser = PFUser.current() else {
             print("Coudn't get current user")
             return nil
         }
+        
         for leftVoteUser in leftVoteUsers {
             if leftVoteUser.objectId == currentUser.objectId {
                 return Side.left
             }
         }
+        
         for rightVoteUser in rightVoteUsers {
             if rightVoteUser.objectId == currentUser.objectId  {
                 return Side.right
             }
         }
+        
         return nil
     }
+    
     func canVote(side: Side) -> Bool {
         guard let sideVotedFor = getVote() else {
             return true
         }
+        
         return sideVotedFor != side
     }
 }

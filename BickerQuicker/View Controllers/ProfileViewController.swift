@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
                 print("coudn't get bickers")
             }
         }
+        
         var gender: String?
         UserApi.sharedInstance.getUserGender { (gen, error) in
             if let gen = gen {
@@ -37,6 +38,7 @@ class ProfileViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        
         let username = UserApi.sharedInstance.getUserName()
         nameLabel.text = username
         // Do any additional setup after loading the view.

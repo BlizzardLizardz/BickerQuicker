@@ -18,7 +18,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +37,7 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func signupButtonPressed(_ sender: Any) {
         let newUser = PFUser()
         let signupErrorAlert = UIAlertController(title: "Error Signup", message: "Password Mistmatch", preferredStyle: .alert)
@@ -47,6 +47,7 @@ class SignUpViewController: UIViewController {
             self.present(signupErrorAlert, animated: true, completion: nil)
             return
         }
+        
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         switch genderSelect.selectedSegmentIndex {
@@ -57,6 +58,7 @@ class SignUpViewController: UIViewController {
             default:
                 print("Unknow gender selected")
         }
+        
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 signupErrorAlert.message = "There was issue registering your account. Please try again."
@@ -68,6 +70,7 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func signUpViewTapped(_ sender: Any) {
         self.view.endEditing(true)
     }

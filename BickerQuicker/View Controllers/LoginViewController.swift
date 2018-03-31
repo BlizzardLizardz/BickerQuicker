@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var bickerLabel: UILabel!
     @IBOutlet weak var quickerLabel: UILabel!
     
+    let invalidAlert = UIAlertController(title: "Invalid ", message: "The username or password was invalid. Please try again.", preferredStyle: .alert)
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +37,8 @@ class LoginViewController: UIViewController {
         bickerLabel.textColor = UIColor.girlPink()
         quickerLabel.textColor = UIColor.boyBlue()
         
+        setupAlertControllers()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -41,13 +46,22 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        if !validateFields() {
+            
+            // Fields were invalid
+            self.present(invalidAlert, animated: true)
+            return
+        }
+        
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
-                let alertController = UIAlertController(title: "Error", message: "Username and password are invalid", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Error", message: "Username or password is invalid. Please try again.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -59,9 +73,25 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
     @IBAction func loginViewTapped(_ sender: Any) {
         self.view.endEditing(true)
     }
+    
+    func setupAlertControllers() {
+        // Set up alert for pre-existing username
+        let OKAction = UIAlertAction(title: "OK", style: .destructive) { (action) in
+            // Do nothing
+        }
+        
+        self.invalidAlert.addAction(OKAction)
+    }
+    
+    func validateFields() -> Bool {
+        return usernameField.hasText && passwordField.hasText
+    }
+    
+    
     
 
     /*

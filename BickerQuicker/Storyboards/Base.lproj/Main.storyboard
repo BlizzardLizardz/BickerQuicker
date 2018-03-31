@@ -368,13 +368,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-Th-Fle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-Th-Fle" userLabel="Right Male Votes">
                                 <rect key="frame" x="310.5" y="246.5" width="18.5" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnK-ar-vNA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnK-ar-vNA" userLabel="Right Female Votes">
                                 <rect key="frame" x="310.5" y="284.5" width="18.5" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -567,6 +567,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="He's Right!"/>
+                                <connections>
+                                    <action selector="didVoteLeft:" destination="q0M-1T-cHM" eventType="touchUpInside" id="K3o-Xa-yvQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA0-U8-JXc">
                                 <rect key="frame" x="235" y="263" width="94" height="30"/>
@@ -577,6 +580,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="She's Right!"/>
+                                <connections>
+                                    <action selector="didVoteRight:" destination="q0M-1T-cHM" eventType="touchUpInside" id="F2F-R6-Uvy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -635,6 +641,8 @@
                         <outlet property="leftVoteButton" destination="uYS-NA-U0K" id="LVA-dg-4d3"/>
                         <outlet property="rightBackground" destination="5lA-FU-qUr" id="bu6-bS-0qF"/>
                         <outlet property="rightBoxBackground" destination="3rA-3L-qcZ" id="Xtg-Pe-uil"/>
+                        <outlet property="rightFemaleVotes" destination="lnK-ar-vNA" id="4Vj-Yo-xWL"/>
+                        <outlet property="rightMaleVotes" destination="AWW-Th-Fle" id="SFG-3f-Kom"/>
                         <outlet property="rightTextLabel" destination="qQR-gL-Qg7" id="qfz-GH-EzO"/>
                         <outlet property="rightTitleBackground" destination="Kr6-dI-KIf" id="mzT-kw-Xs4"/>
                         <outlet property="rightTotalVotes" destination="B40-Tp-m5m" id="zS1-gp-LD5"/>

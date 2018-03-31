@@ -16,6 +16,7 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func postButtonPressed(_ sender: Any) {
         Bicker.postBicker(leftText: leftSideTextView.text, rightText: rightSideTextView.text, isGendered: false,       isAnonymous: false) { (success: Bool, error: Error?) in
             if let error = error {
@@ -24,7 +25,8 @@ class PostViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-    }    
+    }
+    
     @IBAction func screenTapped(_ sender: Any) {
         self.view.endEditing(true)
     }
