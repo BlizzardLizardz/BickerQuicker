@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ReloadableDelegate {
     
     @IBOutlet weak var segmentationController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -39,13 +39,9 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.refreshControl?.addTarget(self, action: #selector(refreshBickers), for: .valueChanged)
         self.tableView.addSubview(refreshControl)
         
-        setupAlerts()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // TODO: Later update to add cell to table via delegate
-        skip = 0
         getBickers(startFromBegining: true)
+        
+        setupAlerts()
     }
     
     override func didReceiveMemoryWarning() {
@@ -142,6 +138,12 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func reloadData() {
+        skip = 0
+        getBickers(startFromBegining: true)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "detailViewSegue" {
@@ -154,6 +156,9 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 } else {
                     print("NO BICKERS HERE! HUE HUE HUE")
                 }
+            } else if identifier == "createBicker" {
+                let createBickerController = segue.destination as! PostViewController
+                createBickerController.delegate = self
             }
         }
     }

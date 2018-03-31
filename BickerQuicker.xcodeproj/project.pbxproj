@@ -16,6 +16,7 @@
 		E342C2A72060724D004273A2 /* Bicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E342C2A62060724D004273A2 /* Bicker.swift */; };
 		E34A7C372067702000546271 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A7C362067702000546271 /* Side.swift */; };
 		E34A7C392067703C00546271 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A7C382067703C00546271 /* Gender.swift */; };
+		E35E8340206F44CB00DAF77C /* ReloadableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35E833F206F44CB00DAF77C /* ReloadableDelegate.swift */; };
 		E373BDFC2069974A00AE4AB1 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373BDFB2069974A00AE4AB1 /* UserApi.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
 		E3F226C3206C5FB5008ED18C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F226C2206C5FB5008ED18C /* Order.swift */; };
@@ -42,6 +43,7 @@
 		E342C2A62060724D004273A2 /* Bicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bicker.swift; sourceTree = "<group>"; };
 		E34A7C362067702000546271 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		E34A7C382067703C00546271 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		E35E833F206F44CB00DAF77C /* ReloadableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadableDelegate.swift; sourceTree = "<group>"; };
 		E373BDFB2069974A00AE4AB1 /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		E3BAB0952050AC440009A44C /* BickerQuicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BickerQuicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3BAB0962050AC440009A44C /* BridgingfFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingfFile.h; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		E35E833E206F44B500DAF77C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E35E833F206F44CB00DAF77C /* ReloadableDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E3BAB0992050AC590009A44C /* Pod Bridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		F5BE196120292C7500D45E44 /* BickerQuicker */ = {
 			isa = PBXGroup;
 			children = (
+				E35E833E206F44B500DAF77C /* Protocols */,
 				E342C2A32059EFDD004273A2 /* Storyboards */,
 				E342C2A22059EFBA004273A2 /* View Controllers */,
 				E342C29F2059EBEB004273A2 /* Models */,
@@ -316,6 +327,7 @@
 				E34A7C392067703C00546271 /* Gender.swift in Sources */,
 				E34A7C372067702000546271 /* Side.swift in Sources */,
 				F5B0398D2060769F00E46559 /* PostViewController.swift in Sources */,
+				E35E8340206F44CB00DAF77C /* ReloadableDelegate.swift in Sources */,
 				F5BE196320292C7500D45E44 /* AppDelegate.swift in Sources */,
 				C6F004C42044D4B40053C741 /* UIColor+FlatColors.swift in Sources */,
 				F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */,

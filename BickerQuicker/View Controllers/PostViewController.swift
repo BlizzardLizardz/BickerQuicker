@@ -13,6 +13,9 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var leftSideTextView: UITextView!
     @IBOutlet weak var rightSideTextView: UITextView!
+    
+    var delegate: ReloadableDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,6 +25,7 @@ class PostViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if success {
+                self.delegate?.reloadData()
                 self.dismiss(animated: true, completion: nil)
             }
         }
