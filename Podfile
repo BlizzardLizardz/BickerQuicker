@@ -8,4 +8,5 @@ target 'BickerQuicker' do
   # Pods for BickerQuicker
   pod 'Parse'
   pod 'ParseUI'
+  pod 'KMPlaceholderTextView', '~> 1.3.0'
 end
