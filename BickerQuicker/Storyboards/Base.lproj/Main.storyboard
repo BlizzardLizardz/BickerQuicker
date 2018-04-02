@@ -347,7 +347,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="PL1-sh-Jn2">
                             <connections>
-                                <segue destination="qTI-p0-LmZ" kind="presentation" identifier="createBicker" id="91q-RM-q4g"/>
+                                <segue destination="VUW-yJ-Nv8" kind="presentation" identifier="createBicker" id="91q-RM-q4g"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -667,55 +667,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-hi-faZ">
-                                <rect key="frame" x="67" y="98.5" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-hi-faZ" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                <rect key="frame" x="32" y="150.5" width="311" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="eBl-Oi-9AN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Left side argument"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urJ-Nn-s51">
-                                <rect key="frame" x="172" y="518" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Post"/>
-                                <connections>
-                                    <action selector="postButtonPressed:" destination="qTI-p0-LmZ" eventType="touchUpInside" id="DLN-sU-dfz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opp-Aa-29E">
-                                <rect key="frame" x="67" y="70" width="68" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opp-Aa-29E">
+                                <rect key="frame" x="32" y="114" width="68" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-tD-oGO">
-                                <rect key="frame" x="67" y="267" width="78" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Right Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzR-nS-mf3">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-Z5-hZE">
-                                <rect key="frame" x="67" y="295" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5E-hl-Xh4">
+                                <rect key="frame" x="32" y="318.5" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-Z5-hZE" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                <rect key="frame" x="32" y="359.5" width="311" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="d7J-tc-Ir8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Right side argument"/>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="cHr-rt-hXy" firstAttribute="trailing" secondItem="DfV-Z5-hZE" secondAttribute="trailing" constant="32" id="5RM-pK-18J"/>
+                            <constraint firstItem="cHr-rt-hXy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O5E-hl-Xh4" secondAttribute="trailing" constant="240" id="Cb5-Aa-q6g"/>
+                            <constraint firstItem="cHr-rt-hXy" firstAttribute="trailing" secondItem="xg5-hi-faZ" secondAttribute="trailing" constant="32" id="I4Y-98-ZrI"/>
+                            <constraint firstItem="DfV-Z5-hZE" firstAttribute="top" secondItem="O5E-hl-Xh4" secondAttribute="bottom" constant="20" id="LqQ-t6-UvZ"/>
+                            <constraint firstItem="opp-Aa-29E" firstAttribute="leading" secondItem="cHr-rt-hXy" secondAttribute="leading" constant="32" id="PIg-1r-joc"/>
+                            <constraint firstItem="DfV-Z5-hZE" firstAttribute="leading" secondItem="cHr-rt-hXy" secondAttribute="leading" constant="32" id="TYq-hp-gse"/>
+                            <constraint firstItem="opp-Aa-29E" firstAttribute="top" secondItem="cHr-rt-hXy" secondAttribute="top" constant="50" id="ULj-od-glT"/>
+                            <constraint firstItem="xg5-hi-faZ" firstAttribute="leading" secondItem="cHr-rt-hXy" secondAttribute="leading" constant="32" id="cIp-W4-D7N"/>
+                            <constraint firstItem="cHr-rt-hXy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="opp-Aa-29E" secondAttribute="trailing" constant="240" id="eZi-E4-blt"/>
+                            <constraint firstItem="O5E-hl-Xh4" firstAttribute="top" secondItem="xg5-hi-faZ" secondAttribute="bottom" constant="40" id="kjc-vB-wCY"/>
+                            <constraint firstItem="xg5-hi-faZ" firstAttribute="top" secondItem="opp-Aa-29E" secondAttribute="bottom" constant="16" id="oJV-XR-Jf5"/>
+                            <constraint firstItem="O5E-hl-Xh4" firstAttribute="leading" secondItem="cHr-rt-hXy" secondAttribute="leading" constant="32" id="oai-jC-rio"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cHr-rt-hXy"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="8MP-Ys-XHH" appends="YES" id="Dte-XT-3Za"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="vAn-aV-r4c">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="asD-a6-tge">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="qTI-p0-LmZ" id="IEl-cr-3HS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="Dgb-44-2jx">
+                            <connections>
+                                <action selector="postButtonPressed:" destination="qTI-p0-LmZ" id="e1u-w1-F3N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="leftSideTextView" destination="xg5-hi-faZ" id="ekl-8e-zfh"/>
                         <outlet property="rightSideTextView" destination="DfV-Z5-hZE" id="7wh-4V-vja"/>
@@ -728,7 +749,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3439" y="948"/>
+            <point key="canvasLocation" x="4754" y="877"/>
         </scene>
         <!--SignUpViewController-->
         <scene sceneID="rGF-3o-aUW">
@@ -1199,6 +1220,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B39-Av-YUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-471" y="1815"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5bZ-rD-17b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VUW-yJ-Nv8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ozZ-Mz-RUG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qTI-p0-LmZ" kind="relationship" relationship="rootViewController" id="SWH-2u-aY1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b03-Zf-Crh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3437.5999999999999" y="947.67616191904051"/>
         </scene>
     </scenes>
     <resources>

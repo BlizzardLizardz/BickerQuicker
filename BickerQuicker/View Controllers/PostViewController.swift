@@ -20,7 +20,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func postButtonPressed(_ sender: Any) {
+    @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
         Bicker.postBicker(leftText: leftSideTextView.text, rightText: rightSideTextView.text, isGendered: false,       isAnonymous: false) { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
@@ -29,6 +29,10 @@ class PostViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func screenTapped(_ sender: Any) {
