@@ -28,19 +28,14 @@ class ProfileViewController: UIViewController {
             }
         }
         
-        var gender: String?
-        UserApi.sharedInstance.getUserGender { (gen, error) in
-            if let gen = gen {
-                gender = gen
-                self.genderLabel.text = gender
-            }
-            if let error = error {
-                print(error.localizedDescription)
-            }
+        var gender: Gender?
+        var username: String?
+        if let userInfo = UserApi.sharedInstance.getUserInfo() {
+            gender = userInfo.gender
+            username = userInfo.username
         }
-        
-        let username = UserApi.sharedInstance.getUserName()
         nameLabel.text = username
+        genderLabel.text = gender?.rawValue
         // Do any additional setup after loading the view.
     }
 

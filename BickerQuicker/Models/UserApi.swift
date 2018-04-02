@@ -32,30 +32,16 @@ class UserApi {
         }
     }
     
-    func getUserName() -> String? {
+    func getUserInfo() -> (username: String?, gender: Gender)? {
         guard let user = PFUser.current() else {
             return nil
         }
-        
-        return user.username
-    }
-    
-    func getUserGender(completion: @escaping (String?, Error?) -> ()) {
-        guard let user = PFUser.current() else {
-            completion(nil, nil)
-            return
+        guard let genderString = user["gender"] as? String else {
+            return nil
         }
-        
-        user.fetchIfNeededInBackground { (userObject, error) in
-            if let error = error {
-                completion(nil, error)
-                return
-            } else if let userObject = userObject {
-                completion(userObject["gender"] as? String, nil)
-                return
-            }
+        guard let gender = Gender(rawValue: genderString) else {
+            return nil
         }
-        
-        completion(nil, nil)
+        return (user.username, gender)
     }
 }
