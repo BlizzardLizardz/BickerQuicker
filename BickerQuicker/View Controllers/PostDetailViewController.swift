@@ -33,6 +33,11 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var rightTextLabel: UILabel!
     @IBOutlet weak var leftTextLabel: UILabel!
     @IBOutlet weak var topSideLabel: UILabel!
+    @IBOutlet weak var totalsLabel: UILabel!
+    @IBOutlet weak var leftMaleButton: UIButton!
+    @IBOutlet weak var leftFemaleButton: UIButton!
+    @IBOutlet weak var rightMaleButton: UIButton!
+    @IBOutlet weak var rightFemaleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +68,13 @@ class PostDetailViewController: UIViewController {
         rightVoteButton.clipsToBounds = true
         rightVoteButton.layer.cornerRadius = 7
         
+        let vote = bicker.getVote()
+        if vote == nil {
+            hide(results: true, voting: false)
+        } else {
+            hide(results: false, voting: true)
+        }
+        
         setFields()
         
     }
@@ -83,6 +95,7 @@ class PostDetailViewController: UIViewController {
                 print("Voting for LEFT side successful!")
                 self.updateButtons(side: .left)
                 self.setVotes(bicker: self.bicker)
+                self.hide(results: false, voting: true)
             }
         }
         
@@ -99,6 +112,7 @@ class PostDetailViewController: UIViewController {
                 print("Voting for RIGHT side successful!")
                 self.updateButtons(side: .right)
                 self.setVotes(bicker: self.bicker)
+                self.hide(results: false, voting: true)
             }
         }
     }
@@ -165,6 +179,22 @@ class PostDetailViewController: UIViewController {
         // Total votes
         leftTotalVotes.text = String(bicker.leftMaleVote + bicker.leftFemVote)
         rightTotalVotes.text = String(bicker.rightMaleVote + bicker.rightFemVote)
+    }
+    
+    func hide(results: Bool, voting: Bool) {
+        leftVoteButton.isHidden = voting
+        rightVoteButton.isHidden = voting
+        leftBoxBackground.isHidden = results
+        rightBoxBackground.isHidden = results
+        leftMaleVotes.isHidden = results
+        leftFemaleVotes.isHidden = results
+        rightMaleVotes.isHidden = results
+        rightFemaleVotes.isHidden = results
+        totalsLabel.isHidden = results
+        leftMaleButton.isHidden = results
+        leftFemaleButton.isHidden = results
+        rightMaleButton.isHidden = results
+        rightFemaleButton.isHidden = results
     }
     
     

@@ -633,7 +633,9 @@
                         <outlet property="bottomSideLabel" destination="olC-2P-pzn" id="UBM-ZT-RjA"/>
                         <outlet property="leftBackground" destination="gNG-22-ezG" id="1hI-ES-53T"/>
                         <outlet property="leftBoxBackground" destination="ezO-dF-bBf" id="V2F-SB-03x"/>
+                        <outlet property="leftFemaleButton" destination="SBd-3z-7RH" id="mCm-7u-s9K"/>
                         <outlet property="leftFemaleVotes" destination="byR-D4-GYB" id="bkt-p8-p7y"/>
+                        <outlet property="leftMaleButton" destination="1sV-OU-zJr" id="yam-Pr-ZAq"/>
                         <outlet property="leftMaleVotes" destination="1g0-lk-Ss2" id="MXY-Mw-xn2"/>
                         <outlet property="leftTextLabel" destination="A17-O2-dQE" id="QMr-GO-SM4"/>
                         <outlet property="leftTitleBackground" destination="FHF-zt-wLF" id="W7L-Yx-3G5"/>
@@ -641,13 +643,16 @@
                         <outlet property="leftVoteButton" destination="uYS-NA-U0K" id="LVA-dg-4d3"/>
                         <outlet property="rightBackground" destination="5lA-FU-qUr" id="bu6-bS-0qF"/>
                         <outlet property="rightBoxBackground" destination="3rA-3L-qcZ" id="Xtg-Pe-uil"/>
+                        <outlet property="rightFemaleButton" destination="4h6-g2-9nc" id="DHr-tE-49A"/>
                         <outlet property="rightFemaleVotes" destination="lnK-ar-vNA" id="4Vj-Yo-xWL"/>
+                        <outlet property="rightMaleButton" destination="wg9-Lc-axP" id="hjT-2N-tKt"/>
                         <outlet property="rightMaleVotes" destination="AWW-Th-Fle" id="SFG-3f-Kom"/>
                         <outlet property="rightTextLabel" destination="qQR-gL-Qg7" id="qfz-GH-EzO"/>
                         <outlet property="rightTitleBackground" destination="Kr6-dI-KIf" id="mzT-kw-Xs4"/>
                         <outlet property="rightTotalVotes" destination="B40-Tp-m5m" id="zS1-gp-LD5"/>
                         <outlet property="rightVoteButton" destination="qA0-U8-JXc" id="bZU-tt-gNK"/>
                         <outlet property="topSideLabel" destination="uUz-me-8bk" id="EML-dE-bZ5"/>
+                        <outlet property="totalsLabel" destination="0yg-5D-atb" id="h9q-sQ-vz2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGP-J2-5iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
