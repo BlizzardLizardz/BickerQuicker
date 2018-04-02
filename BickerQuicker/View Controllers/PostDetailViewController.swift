@@ -70,9 +70,9 @@ class PostDetailViewController: UIViewController {
         
         let vote = bicker.getVote()
         if vote == nil {
-            hide(results: true, voting: false)
+            changeAlphas(newAlpha: 0, duration: 0)
         } else {
-            hide(results: false, voting: true)
+            changeAlphas(newAlpha: 1, duration: 0.5)
         }
         
         setFields()
@@ -95,7 +95,7 @@ class PostDetailViewController: UIViewController {
                 print("Voting for LEFT side successful!")
                 self.updateButtons(side: .left)
                 self.setVotes(bicker: self.bicker)
-                self.hide(results: false, voting: true)
+                self.changeAlphas(newAlpha: 1, duration: 0.5)
             }
         }
         
@@ -112,7 +112,7 @@ class PostDetailViewController: UIViewController {
                 print("Voting for RIGHT side successful!")
                 self.updateButtons(side: .right)
                 self.setVotes(bicker: self.bicker)
-                self.hide(results: false, voting: true)
+                self.changeAlphas(newAlpha: 1, duration: 0.5)
             }
         }
     }
@@ -128,10 +128,11 @@ class PostDetailViewController: UIViewController {
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.leftVoteButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#colorLiteral(red: 0.9639316307, green: 0.9639316307, blue: 0.9639316307, alpha: 1)
-                self.leftVoteButton.titleLabel?.textColor = .boyBlue()
+            //    self.leftVoteButton.titleLabel?.textColor = .boyBlue()
                 self.rightVoteButton.backgroundColor = .girlPink()
-                self.rightVoteButton.titleLabel?.textColor = .white
+             //   self.rightVoteButton.titleLabel?.textColor = .white
             })
+
             
         } else {
             // Update buttons
@@ -142,9 +143,9 @@ class PostDetailViewController: UIViewController {
             
             UIView.animate(withDuration: 0.25, animations: {
                 self.rightVoteButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) //#colorLiteral(red: 0.9639316307, green: 0.9639316307, blue: 0.9639316307, alpha: 1)
-                self.rightVoteButton.titleLabel?.textColor = .girlPink()
-                self.leftVoteButton.backgroundColor = .boyBlue()
-                self.leftVoteButton.titleLabel?.textColor = .white
+                //self.rightVoteButton.titleLabel?.textColor = .girlPink()
+                self.leftVoteButton.backgroundColor = .lightBoyBlue()
+            //    self.leftVoteButton.titleLabel?.textColor = .white
             })
             
         }
@@ -181,20 +182,21 @@ class PostDetailViewController: UIViewController {
         rightTotalVotes.text = String(bicker.rightMaleVote + bicker.rightFemVote)
     }
     
-    func hide(results: Bool, voting: Bool) {
-        leftVoteButton.isHidden = voting
-        rightVoteButton.isHidden = voting
-        leftBoxBackground.isHidden = results
-        rightBoxBackground.isHidden = results
-        leftMaleVotes.isHidden = results
-        leftFemaleVotes.isHidden = results
-        rightMaleVotes.isHidden = results
-        rightFemaleVotes.isHidden = results
-        totalsLabel.isHidden = results
-        leftMaleButton.isHidden = results
-        leftFemaleButton.isHidden = results
-        rightMaleButton.isHidden = results
-        rightFemaleButton.isHidden = results
+    func changeAlphas(newAlpha: CGFloat, duration: Double) {
+        
+        UIView.animate(withDuration: duration) {
+            self.leftBoxBackground.alpha = newAlpha
+            self.rightBoxBackground.alpha = newAlpha
+            self.leftMaleVotes.alpha = newAlpha
+            self.leftFemaleVotes.alpha = newAlpha
+            self.rightMaleVotes.alpha = newAlpha
+            self.rightFemaleVotes.alpha = newAlpha
+            self.totalsLabel.alpha = newAlpha
+            self.leftMaleButton.alpha = newAlpha
+            self.leftFemaleButton.alpha = newAlpha
+            self.rightMaleButton.alpha = newAlpha
+            self.rightFemaleButton.alpha = newAlpha
+        }
     }
     
     
