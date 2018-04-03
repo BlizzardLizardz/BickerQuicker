@@ -18,6 +18,8 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var colors = [UIColor]()
+        navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
     }
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {

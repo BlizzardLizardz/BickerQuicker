@@ -41,6 +41,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         getBickers(startFromBegining: true)
         
+        navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
+
         setupAlerts()
     }
     
@@ -157,7 +159,8 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("NO BICKERS HERE! HUE HUE HUE")
                 }
             } else if identifier == "createBicker" {
-                let createBickerController = segue.destination as! PostViewController
+                let navbarController = segue.destination as! UINavigationController
+                let createBickerController = navbarController.childViewControllers[0] as! PostViewController
                 createBickerController.delegate = self
             }
         }

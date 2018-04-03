@@ -74,7 +74,8 @@ class PostDetailViewController: UIViewController {
         } else {
             changeAlphas(newAlpha: 1, duration: 0.5)
         }
-        
+        navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
+
         setFields()
         
     }

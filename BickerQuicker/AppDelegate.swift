@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     )
     UITabBar.appearance().tintColor = UIColor.bickerPurple()
+    UINavigationBar.appearance().tintColor = .white
+    UIApplication.shared.statusBarStyle = .lightContent
     if PFUser.current() != nil {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedView")

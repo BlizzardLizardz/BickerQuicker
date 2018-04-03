@@ -727,11 +727,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="vAn-aV-r4c">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="asD-a6-tge">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="qTI-p0-LmZ" id="IEl-cr-3HS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="Dgb-44-2jx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="postButtonPressed:" destination="qTI-p0-LmZ" id="e1u-w1-F3N"/>
                             </connections>

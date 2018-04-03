@@ -19,6 +19,8 @@
 		E35E8340206F44CB00DAF77C /* ReloadableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35E833F206F44CB00DAF77C /* ReloadableDelegate.swift */; };
 		E373BDFC2069974A00AE4AB1 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373BDFB2069974A00AE4AB1 /* UserApi.swift */; };
 		E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */ = {isa = PBXBuildFile; fileRef = E3BAB0972050AC440009A44C /* BridgingfFile.c */; };
+		E3BB70C92072F5F1000FDBE0 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BB70C82072F5F1000FDBE0 /* Gradient.swift */; };
+		E3BB70CB2072F604000FDBE0 /* NavbarGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BB70CA2072F604000FDBE0 /* NavbarGradient.swift */; };
 		E3F226C3206C5FB5008ED18C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F226C2206C5FB5008ED18C /* Order.swift */; };
 		F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */; };
 		F5B0398D2060769F00E46559 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0398C2060769F00E46559 /* PostViewController.swift */; };
@@ -48,6 +50,8 @@
 		E3BAB0952050AC440009A44C /* BickerQuicker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BickerQuicker-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3BAB0962050AC440009A44C /* BridgingfFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingfFile.h; sourceTree = "<group>"; };
 		E3BAB0972050AC440009A44C /* BridgingfFile.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BridgingfFile.c; sourceTree = "<group>"; };
+		E3BB70C82072F5F1000FDBE0 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		E3BB70CA2072F604000FDBE0 /* NavbarGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarGradient.swift; sourceTree = "<group>"; };
 		E3F226C2206C5FB5008ED18C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F588B0B6205FFBB500C3ABE3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F5B0398C2060769F00E46559 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,16 @@
 			path = "Pod Bridge";
 			sourceTree = "<group>";
 		};
+		E3BB70C72072F5AE000FDBE0 /* UI Mods */ = {
+			isa = PBXGroup;
+			children = (
+				E3BB70C82072F5F1000FDBE0 /* Gradient.swift */,
+				E3BB70CA2072F604000FDBE0 /* NavbarGradient.swift */,
+				C6F004C32044D4B40053C741 /* UIColor+FlatColors.swift */,
+			);
+			path = "UI Mods";
+			sourceTree = "<group>";
+		};
 		F5BE195620292C7500D45E44 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +181,7 @@
 		F5BE196120292C7500D45E44 /* BickerQuicker */ = {
 			isa = PBXGroup;
 			children = (
+				E3BB70C72072F5AE000FDBE0 /* UI Mods */,
 				E35E833E206F44B500DAF77C /* Protocols */,
 				E342C2A32059EFDD004273A2 /* Storyboards */,
 				E342C2A22059EFBA004273A2 /* View Controllers */,
@@ -174,7 +189,6 @@
 				F5BE196220292C7500D45E44 /* AppDelegate.swift */,
 				F5BE196920292C7500D45E44 /* Assets.xcassets */,
 				F5BE196E20292C7500D45E44 /* Info.plist */,
-				C6F004C32044D4B40053C741 /* UIColor+FlatColors.swift */,
 				E3BAB0992050AC590009A44C /* Pod Bridge */,
 			);
 			path = BickerQuicker;
@@ -320,6 +334,7 @@
 			files = (
 				C6F004C62044D8180053C741 /* LoginViewController.swift in Sources */,
 				F5B0399120632A0500E46559 /* PostDetailViewController.swift in Sources */,
+				E3BB70CB2072F604000FDBE0 /* NavbarGradient.swift in Sources */,
 				E3F226C3206C5FB5008ED18C /* Order.swift in Sources */,
 				E3BAB0982050AC440009A44C /* BridgingfFile.c in Sources */,
 				F5B0398F2060779700E46559 /* SettingsViewController.swift in Sources */,
@@ -335,6 +350,7 @@
 				F588B0B7205FFBB500C3ABE3 /* ProfileViewController.swift in Sources */,
 				C69B15E620487BC600C2164E /* SignUpViewController.swift in Sources */,
 				E342C2A72060724D004273A2 /* Bicker.swift in Sources */,
+				E3BB70C92072F5F1000FDBE0 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

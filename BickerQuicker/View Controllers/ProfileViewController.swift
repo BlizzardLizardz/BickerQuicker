@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
         UserApi.sharedInstance.getUserBickers { (bickers) in
             if let bickers = bickers {
                 self.bickers = bickers

@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
 
         // Do any additional setup after loading the view.
     }
