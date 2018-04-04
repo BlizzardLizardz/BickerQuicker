@@ -42,7 +42,6 @@ class BickerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         getBickers(startFromBegining: true)
         
         navigationController?.navigationBar.setGradientBackground(colors: [.boyBlue(), .girlPink()])
-
         setupAlerts()
     }
     
