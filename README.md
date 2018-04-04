@@ -18,8 +18,8 @@ The following **required** functionality is completed:
 - [x] User can pull to refresh the list of Bickers - Harjas
 - [x] User can tap on a Bicker to view statistics about that bicker
 - [x] User can vote for one side of a Bicker
-- [ ] User can choose to post a bicker anonymously
-- [ ] Auto layout support for iPhone 6 and newer
+- [x] User can post a bicker anonymously
+- [x] Auto layout support for iPhone 6 and newer
 
 The following **stretch** features are completed:
 
@@ -31,7 +31,11 @@ The following **stretch** features are completed:
 
 The following **additional** features are compelted:
 
-- [ ] List additional user stories here
+- [x] Added a gradient in the navigation bar across the application.
+
+
+Demo
+<img src="BickerQuicker_Demo.gif" title="Demo Gif" width='' alt='Demo'/>
 
 
 
@@ -40,5 +44,7 @@ Wireframe:
 <img src="wireframe.jpg" title="Prototype Wireframe" width='' alt='Prototype Wireframe'/>
 
 <img src="https://i.imgur.com/ULVWDFV.gif" title="Prototype Wireframe" width='' alt='Prototype Wireframe'/>
+
+
 
 
