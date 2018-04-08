@@ -566,7 +566,7 @@
                                     <constraint firstAttribute="height" constant="30" id="LYV-DL-eof"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="He's Right!"/>
+                                <state key="normal" title="Vote Left"/>
                                 <connections>
                                     <action selector="didVoteLeft:" destination="q0M-1T-cHM" eventType="touchUpInside" id="K3o-Xa-yvQ"/>
                                 </connections>
@@ -579,7 +579,7 @@
                                     <constraint firstAttribute="width" constant="94" id="KYv-fo-deN"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="She's Right!"/>
+                                <state key="normal" title="Vote Right"/>
                                 <connections>
                                     <action selector="didVoteRight:" destination="q0M-1T-cHM" eventType="touchUpInside" id="F2F-R6-Uvy"/>
                                 </connections>
