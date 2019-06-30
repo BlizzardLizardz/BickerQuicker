@@ -1,6 +1,9 @@
+Note: BickerQuicker is now being maintained as a part of the CS407 project team that includes Brendan Raftery. This version of the project is an Android application. Its progress can be monitored here: https://github.com/Theone63011/Bicker-Quicker
+
+-----
 # BickerQuicker
 
-Project Name: **BickerBickerQuicker**
+Project Name: **BickerQuicker**
 
 Team : BlizzardLizardz
 Team Members : Jon Grider, Brendan Raftery, Harjas Monga, Scott E.
